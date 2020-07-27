@@ -34,3 +34,40 @@
     </div>
   </div>
 </section>
+
+
+<style>
+    #mapid { height: 500px; }
+</style>
+
+<section class="map-container">
+  <div id="mapid"></div>
+  <div id="feature_infos"> <span id="heading">Clickresult: </span>
+  <span id="info"></span>
+  </div>
+</section>
+
+
+<script>
+var mymap = L.map('mapid').setView([39.61,-105.02], 13);
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWkifQ.9rqymFnsW79aCkAFGCo0XQ'
+}).addTo(mymap);
+var marker = L.marker([39.61,-105.02]).addTo(mymap);
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
+
+
+mymap.on('click', onMapClick);
+</script>
