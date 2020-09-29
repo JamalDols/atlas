@@ -305,3 +305,24 @@ a img.aligncenter {
 		page-break-after:avoid;
 	}
 }
+
+
+.list-cases {
+	padding-bottom: 120px;
+}
+
+.row.position-relative {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+.row.position-relative > div {
+	background: white;
+	flex: 1 1 33.3333%;
+	padding: 10px;
+	max-width: 33.33333%;
+}
+
+.logo {
+	display: none;
+}

@@ -96,7 +96,7 @@ $json =json_encode($output);
         var data = <?php echo $json ?>;
         // Create map instance
         var map = L.map('map',{
-            center:[38.840401, 0.208840],
+            center:[39.4697500, -0.3773900],
             zoom:10
         });
 
@@ -141,7 +141,7 @@ accessToken: 'pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWk
         var categorynone = L.geoJson(geojsonData, {
             onEachFeature:function(feature, layer) {
                 let content ="<table class='table table-striped table-bordered table-condensed'>" +
-                    "<tr><th>address</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>category</th><td>" + feature.properties.category +"</td></tr><table>";
+                    "<tr><th>Dirección:</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>Categoría: </th><td>" + feature.properties.category +"</td></tr><table>";
                 
                 layer.bindPopup(content);
             },
@@ -157,7 +157,7 @@ accessToken: 'pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWk
         var category1 = L.geoJson(geojsonData, {
             onEachFeature:function(feature, layer) {
                 let content ="<table class='table table-striped table-bordered table-condensed'>" +
-                    "<tr><th>address</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>category</th><td>" + feature.properties.category +"</td></tr><table>";
+                    "<tr><th>Dirección:</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>Categoría: </th><td>" + feature.properties.category +"</td></tr><table>";
                 
                 layer.bindPopup(content);
             },
@@ -174,7 +174,7 @@ accessToken: 'pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWk
         var category2 = L.geoJson(geojsonData, {
             onEachFeature:function(feature, layer) {
                 let content ="<table class='table table-striped table-bordered table-condensed'>" +
-                    "<tr><th>address</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>category</th><td>" + feature.properties.category +"</td></tr><table>";
+                    "<tr><th>Dirección:</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>Categoría: </th><td>" + feature.properties.category +"</td></tr><table>";
                 
                 layer.bindPopup(content);
             },
@@ -200,4 +200,7 @@ accessToken: 'pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWk
         }).addTo(map);
         markers.addLayer(all);
         markers.addTo(map);
+
+        console.log(markers);
+
     </script>
