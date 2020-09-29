@@ -10,6 +10,7 @@ wp-content/*
 
 # ignore these plugins
 wp-content/plugins/hello.php
+wp-content/backups-dup-lite
 
 # ignore specific themes
 wp-content/themes/twenty*/
