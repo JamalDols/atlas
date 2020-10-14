@@ -1,5 +1,5 @@
-<?php /* Template Name: Demo Page Template */ get_header(); ?>
-<h1 class="main-title"><?= post_type_archive_title(); ?></h1>
+<?php /* Template Name: Home */ ?>
+
 
 
 <style>
@@ -9,6 +9,7 @@
     height: 100%;
     position: absolute;
     visibility: hidden;
+    display:none;
 }
 #emptymodal.visible {
   background: #ccc;
@@ -29,6 +30,7 @@
   <div class="modal-content"></div>
 </div>
 
+<div id="map"></div>
 <section class="today">
 <h1 id="goodtime"></h1>
 <p class="lead">Son las <span id="time"></span></p>
@@ -41,6 +43,9 @@
               La humedad es del <span id="humidity"></span>.
           </div>
 </section>
+<?php 
+get_template_part('templates/header');
+?>
 
 
 
@@ -89,24 +94,23 @@ $json =json_encode($output);
          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
 
-
+ 
     <script>
    
         var data = <?php echo $json ?>;
         // Create map instance
         var map = L.map('map',{
             center:[39.4697500, -0.3773900],
-            zoom:10
+            zoom:14
         });
 
-          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+          L.tileLayer('https://api.mapbox.com/styles/v1/jamaldols/ckg95x9iu77ew1apgpekvc9j3/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWkifQ.9rqymFnsW79aCkAFGCo0XQ', {
 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 maxZoom: 18,
-id: 'mapbox/streets-v11',
 tileSize: 512,
 zoomOffset: -1,
-accessToken: 'pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWkifQ.9rqymFnsW79aCkAFGCo0XQ'
 }).addTo(map);
+
 
     
 
