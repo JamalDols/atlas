@@ -178,14 +178,14 @@ accessToken: 'pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWk
                 
                 layer.bindPopup(content);
                 console.log('fuera de : '+ feature.properties.address)
-                markers.on('click', function (e) {
-                  layer.bindPopup(content);
-                  console.log('show');
-                  console.log('dentro de función: '+ feature.properties.address)
-                  console.log(content);
-                  $(".modal-content").html('Marker id: ' + feature.properties.address);
-                  $('#emptymodal').addClass('visible');
-                });
+                // markers.on('click', function (e) {
+                //   layer.bindPopup(content);
+                //   console.log('show');
+                //   console.log('dentro de función: '+ feature.properties.address)
+                //   console.log(content);
+                //   $(".modal-content").html('Marker id: ' + feature.properties.address);
+                //   $('#emptymodal').addClass('visible');
+                // });
             },
             pointToLayer:function(geoObj, latLng) {
                 return L.marker(latLng);
