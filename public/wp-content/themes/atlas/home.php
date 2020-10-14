@@ -23,9 +23,24 @@
 }
   
 </style>
+
+<div id="loader" class="visible"></div>
 <div id="emptymodal">
   <div class="modal-content"></div>
 </div>
+
+<section class="today">
+<h1 id="goodtime"></h1>
+<p class="lead">Son las <span id="time"></span></p>
+          <div id="weather">
+            <p class="lead">En <span id="location"></span> la temperatura es de <span id="temp"></span> y hay
+              <span id="description"></span>. 
+              
+              <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+              
+              La humedad es del <span id="humidity"></span>.
+          </div>
+</section>
 
 
 <section class="list-cases">
@@ -106,12 +121,6 @@ $json =json_encode($output);
          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
 
- 
-
-
-  
-  
-  
 
     <script>
    
