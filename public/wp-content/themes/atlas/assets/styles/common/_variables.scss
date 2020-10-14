@@ -1,6 +1,17 @@
 // Grid settings
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
+
+// Descriptive color variables
+$green: #56E086;
+$green-alt:#1BB970;
+$black: #2C2C2C;
+// Functional color variables
+
+// Asset paths
+$path-image   :   '../images';
+$path-fonts     :  '../../dist/fonts';
+
 //Font Faces
 @font-face {
   font-family: 'Inter';
