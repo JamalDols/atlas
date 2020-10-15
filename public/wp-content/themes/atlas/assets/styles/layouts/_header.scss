@@ -1,4 +1,9 @@
 header.banner {
+  background-image:url('#{$path-image}/menu-deg.svg');
+  height: 300px;
+  padding-top: 40px;
+  background-repeat: repeat-x;
+  
   & > div {
     display: flex;
     align-items: flex-end;
@@ -7,6 +12,11 @@ header.banner {
   .nav {
     li {
       margin-left: 30px;
+      &.current-menu-item {
+        a {
+          font-weight: 700;
+        }
+      }
     }
     a {
       color:black;
@@ -17,5 +27,13 @@ header.banner {
       
       
     }
+  }
+}
+
+.page-header {
+  margin-bottom: 60px;
+  h1 {
+    font-weight: 400;
+    font-size: 60px;
   }
 }

@@ -1,130 +1,24 @@
-<?php /* Template Name: Home */ ?>
+<?php
+/**
+ * Template Name: Map
+ */
+?>
 
 
 
-<style>
-#emptymodal {
-  background: #ccc;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    visibility: hidden;
-    display:none;
-}
-#emptymodal.visible {
-  background: #ccc;
-    width: 100%;
-    height: 300px;
-    position: fixed;
-    visibility: visible;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-  
-</style>
 
-<div id="loader" class="visible"></div>
-<div id="emptymodal">
-  <div class="modal-content"></div>
-</div>
 
 <div id="map"></div>
 
 
 
-<?php 
-get_template_part('templates/header');
-?>
 
-<section class="home--info">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-3">
-        <h1 class="title--home">Què és Valencia Sostenible?</h1>
-      </div>
-      <div class="col-md-9">
-        <span class="text__big">València Clima i Energia és una fundació municipal de l’Ajuntament de València, i que
-          depén de la Regidoria d’Emergència Climàtica i Transició Energètica. Els eixos fonamentals del seu treball són
-          la informació i formació sobre canvi climàtic.</span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <h1 class="title--home">València hui</h1>
-      </div>
-      <div class="col-md-9 weather-info">
-        <div class="weather-info--col">
-          <span id="time"></span>
-        </div>
-        <div class="weather-info--col">
-          <span id="temp"></span>
-        </div>
-        <div class="weather-info--col">
-          <span id="humidity"></span>
-        </div>
-        <div class="weather-info--col">
-          <div id="icon" style="    transform: scale(2.4);transform-origin: right;"><img id="wicon" src="" alt=""></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <h1 class="title--home">Notícies</h1>
-      </div>
-      <div class="col-md-3 card--news__home">
-
-        <div class="item-news">
-          <div class="image"
-            style="background-image:url('<?= get_template_directory_uri(); ?>/dist/images/Noticia_01.jpg')"></div>
-          <div class="box-color">
-            <span class="date">22.09.2020</span>
-            <span class="text">
-              120 famílies s’interessen per formar part de les dos primeres comunitats energètiques de valència
-            </span>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-md-3 card--news__home">
-
-        <div class="item-news">
-          <div class="image"
-            style="background-image:url('<?= get_template_directory_uri(); ?>/dist/images/Noticia_02.jpg')"></div>
-          <div class="box-color">
-            <span class="date">22.09.2020</span>
-            <span class="text">
-              Dia europeu de les comunitats sostenibles
-            </span>
-          </div>
-        </div>
-
-
-      </div>
-      <div class="col-md-3 card--news__home">
-        <div class="item-news">
-          <div class="image"
-            style="background-image:url('<?= get_template_directory_uri(); ?>/dist/images/Noticia_03.jpg')"></div>
-          <div class="box-color">
-            <span class="date">22.09.2020</span>
-            <span class="text">
-              Matchup participa en la lluita contra la vulnerabilitat energètica durant l’alerta sanitària
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
 
 
 
 <style>
     #map,
-    #acf-map { height: 500px; }
+    #acf-map { height: calc(100vh - 206px); }
 </style>
  <?php
           $arg = array( 'post_type' => 'lugar', 'posts_per_page' => 10,);
@@ -173,7 +67,8 @@ $json =json_encode($output);
         // Create map instance
         var map = L.map('map',{
             center:[39.4697500, -0.3773900],
-            zoom:14
+            zoom:14,
+            scrollWheelZoom: false
         });
 
           L.tileLayer('https://api.mapbox.com/styles/v1/jamaldols/ckg95x9iu77ew1apgpekvc9j3/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiamFtYWxkb2xzIiwiYSI6ImNrYmF2bGowOTBycGEyeG84b2F2NGlsYWkifQ.9rqymFnsW79aCkAFGCo0XQ', {

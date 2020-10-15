@@ -92,9 +92,7 @@
       
       
       
-          document.getElementById('description').innerHTML = description;
           document.getElementById('temp').innerHTML = celsius + '&deg;';
-          document.getElementById('location').innerHTML = d.name;
           document.getElementById('humidity').innerHTML = humidity + '%';
           $('#wicon').attr('src', iconUrl);
         
