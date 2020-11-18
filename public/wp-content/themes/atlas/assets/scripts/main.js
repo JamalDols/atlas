@@ -58,9 +58,9 @@
           var description = d.weather[0].description;
           var humidity = d.main.humidity;
           var icon = d.weather[0].icon;
-          var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
+          var iconUrl = "http://www.atlas.local/wp-content/themes/atlas/dist/images/wicons/" + icon + ".svg";
           
-          
+          console.log('Description: ' + description + ' icon file: ' + icon)
           
       
           function pad(num) { 
