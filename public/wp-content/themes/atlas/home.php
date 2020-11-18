@@ -42,20 +42,20 @@ get_template_part('templates/header');
   <div class="container">
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-12 col-lg-3">
         <h1 class="title--home">Què és Valencia Sostenible?</h1>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-12 col-lg-9">
         <span class="text__big">València Clima i Energia és una fundació municipal de l’Ajuntament de València, i que
           depén de la Regidoria d’Emergència Climàtica i Transició Energètica. Els eixos fonamentals del seu treball són
           la informació i formació sobre canvi climàtic.</span>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-12 col-lg-3">
         <h1 class="title--home">València hui</h1>
       </div>
-      <div class="col-md-9 weather-info">
+      <div class="col-md-12 col-lg-9 weather-info">
         <div class="weather-info--col">
           <span id="time"></span>
         </div>
@@ -71,10 +71,10 @@ get_template_part('templates/header');
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-12 col-lg-3">
         <h1 class="title--home">Altres mapes d’interés</h1>
       </div>
-      <div class="col-md-3 card--poi">
+      <div class="col-md-12 col-lg-3 card--poi">
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-1.svg);">
@@ -84,7 +84,7 @@ get_template_part('templates/header');
           </div>
         </div>
       </div>
-      <div class="col-md-3 card--poi">
+      <div class="col-md-12 col-lg-3 card--poi">
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-2.svg);">
@@ -94,7 +94,7 @@ get_template_part('templates/header');
           </div>
         </div>
       </div>
-      <div class="col-md-3 card--poi">
+      <div class="col-md-12 col-lg-3 card--poi">
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-3.svg);">
@@ -106,51 +106,37 @@ get_template_part('templates/header');
       </div>
     </div>
 
+
+
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-12 col-lg-3">
         <h1 class="title--home">Notícies</h1>
       </div>
-      <div class="col-md-3 card--news__home">
+      <?php
+$args = array(
+'post_type' => 'post',
+'posts_per_page' => 3,
+);
+$query = new WP_Query( $args );
+?>
+      
+      <?php while( $query->have_posts() ) : $query->the_post() ?>
 
-        <div class="item-news">
-          <div class="image"
-            style="background-image:url('<?= get_template_directory_uri(); ?>/dist/images/Noticia_01.jpg')"></div>
-          <div class="box-color">
-            <span class="date">22.09.2020</span>
-            <span class="text">
-              120 famílies s’interessen per formar part de les dos primeres comunitats energètiques de valència
-            </span>
+        <div class="col-md-6 col-lg-3 card--news__home">
+          <div class="item-news">
+            <a class="permalink" href="<?= the_permalink() ?>"></a>
+            <div class="image--container">
+              <div class="image"
+                style="background-image:url(<?= the_post_thumbnail_url() ?>)">
+              </div>
+            </div>
+            <div class="box-color">
+              <span class="date"><?= get_the_date( 'd.m.Y', get_the_ID() ); ?></span>
+              <span class="text"><?php the_title() ?></span>
+            </div>
           </div>
         </div>
-
-      </div>
-      <div class="col-md-3 card--news__home">
-
-        <div class="item-news">
-          <div class="image"
-            style="background-image:url('<?= get_template_directory_uri(); ?>/dist/images/Noticia_02.jpg')"></div>
-          <div class="box-color">
-            <span class="date">22.09.2020</span>
-            <span class="text">
-              Dia europeu de les comunitats sostenibles
-            </span>
-          </div>
-        </div>
-
-
-      </div>
-      <div class="col-md-3 card--news__home">
-        <div class="item-news">
-          <div class="image"
-            style="background-image:url('<?= get_template_directory_uri(); ?>/dist/images/Noticia_03.jpg')"></div>
-          <div class="box-color">
-            <span class="date">22.09.2020</span>
-            <span class="text">
-              Matchup participa en la lluita contra la vulnerabilitat energètica durant l’alerta sanitària
-            </span>
-          </div>
-        </div>
-      </div>
+        <?php endwhile; wp_reset_postdata(); ?>
     </div>
   </div>
   </div>

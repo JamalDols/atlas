@@ -39,10 +39,16 @@ body {
 
 .card {
   &--poi {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+    }
     .box-color {
       background-color: $green-alt;
       min-height: 150px;
       padding:15px;
+      @include media-breakpoint-down(md) {
+        height: 200px;
+      }
     }
     .item--poi {
       display: flex;
@@ -59,6 +65,10 @@ body {
       width: 100px;
       margin-bottom: 20px;
       @extend %image-contain;
+      @include media-breakpoint-down(md) {
+        height: 120px;
+      }
+      
 
     }
     .text {
@@ -66,6 +76,40 @@ body {
       color: white;
       text-align: center;
       display: block;
+    }
+  }
+  &--news {
+    &__home {
+      .image {
+        @extend %image-cover;
+        transition: transform 2000ms ease;
+        transform-origin: center center;
+        @include media-breakpoint-down(md) {
+          height: 280px;
+        }
+        
+        &--container {
+          overflow: hidden;
+          pointer-events: none;
+        }
+      }
+      .item-news {
+        position: relative;
+        @include media-breakpoint-down(md) {
+          margin-bottom: 20px;
+        }
+      }
+      a.permalink {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        &:hover {
+          & + .image--container > .image {
+            transform: scale(1.5);
+            
+          }
+        }
+      }
     }
   }
 }
@@ -102,10 +146,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include media-breakpoint-down (md) {
+    flex-wrap: wrap;
+  }
+  
 
   .weather-info--col {
     font-size: 66px;
     color: white; 
+    @include media-breakpoint-down (md) {
+      width: 50%;
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    #icon {
+      @include media-breakpoint-down (md) {
+        margin: 0 auto;
+      }
+      
+    }
   }
 }
 
