@@ -66,10 +66,46 @@ get_template_part('templates/header');
           <span id="humidity"></span>
         </div>
         <div class="weather-info--col">
-          <div id="icon" style="    transform: scale(2.4);transform-origin: right;"><img id="wicon" src="" alt=""></div>
+          <div id="icon" style="width: 100px;"><img id="wicon" src="" alt=""></div>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-3">
+        <h1 class="title--home">Altres mapes d’interés</h1>
+      </div>
+      <div class="col-md-3 card--poi">
+        <div class="box-color">
+          <div class="item--poi">
+            <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-1.svg);">
+              
+            </div>
+            <span class="text">Fonts Públiques</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 card--poi">
+        <div class="box-color">
+          <div class="item--poi">
+            <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-2.svg);">
+              
+            </div>
+            <span class="text">ValenbiSi</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 card--poi">
+        <div class="box-color">
+          <div class="item--poi">
+            <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-3.svg);">
+              
+            </div>
+            <span class="text">Arbres Monumentals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-3">
         <h1 class="title--home">Notícies</h1>

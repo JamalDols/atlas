@@ -36,6 +36,39 @@ body {
   }
 }
 
+
+.card {
+  &--poi {
+    .box-color {
+      background-color: $green-alt;
+      min-height: 150px;
+      padding:15px;
+    }
+    .item--poi {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      width: 100px;
+      margin-bottom: 20px;
+      @extend %image-contain;
+
+    }
+    .text {
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      display: block;
+    }
+  }
+}
 //Component Card News
 .item-news {
   .image {
@@ -62,7 +95,7 @@ body {
 //Home 
 .home--info {
   .row {
-    margin-bottom: 80px;
+    margin-bottom: 120px;
   }
 }
 .weather-info {

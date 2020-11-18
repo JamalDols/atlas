@@ -43,5 +43,15 @@ $path-fonts     :  '../../dist/fonts';
 }
 
 
+%image-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+%image-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 // Font stacks
 $baseFont: 'Inter', sans-serif; 
