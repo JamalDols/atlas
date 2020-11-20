@@ -266,21 +266,87 @@ footer {
   }
 }
 
-//Page Single
-.page-template-template-single-place {
-  .single-place {
-    padding-bottom: 120px;
-    .text {
-      line-height: 1.3;
-      font-size: 20px;
-      p {
-        margin: 0 0 20px;
-      }
-    }
-  }
-}
+
+
 
 //Component Map 
 .leaflet-control-attribution.leaflet-control {
   display: none !important;
 }
+
+//List Places 
+
+.venue {
+  &--list {}
+  &--item {
+    margin: 0 0 60px;
+    position: relative;
+  }
+
+
+  &--box-color {
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    mix-blend-mode: color;
+    transition: 300ms ease opacity;
+  }
+  &--image {
+    height: 100%;
+    width: 100%;
+    @extend %image-cover;
+
+    &__container {
+      position: relative;
+      pointer-events: none;
+      height: 220px;
+    }
+  }
+  &--title {
+    font-size: 22px;
+    margin: 5px 0 10px;
+    transition: 300ms ease color;
+  }
+  &--location {
+    transition: 300ms ease color;
+  }
+  &--permalink {
+    position: absolute;
+    width: calc(100% - 15px);
+    height: 100%;
+    top: 0;
+    left: 7.5px;
+    &:hover {
+      & ~ .venue--image__container > .venue--box-color {
+        
+          opacity: 0;
+        }
+        & ~ .venue--title,
+        & ~ .venue--location  {
+          color: white;
+        }
+      }
+    }
+
+    &--single {
+      padding-bottom: 120px;
+      &--content {
+        line-height: 1.3;
+        font-size: 20px;
+        p {
+          margin: 0 0 20px;
+        }
+      }
+      &__image{
+        height:350px;
+        @extend %image-cover;
+      }
+    }
+
+
+
+  }
+
