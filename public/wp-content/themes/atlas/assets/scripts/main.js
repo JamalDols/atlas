@@ -18,9 +18,24 @@
     // All pages
     'common': {
       init: function() {
+
         setTimeout(function() {
           $('#loader').removeClass("visible");
         },1000);
+
+        //Mouse behaviour
+          var $circle = $('.circle')
+
+          function moveCircle(e) {
+            TweenLite.to($circle, 0.3, {
+              x: e.clientX,
+              y: e.clientY
+            });
+          }
+
+          $(window).on('mousemove', moveCircle);
+
+          
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

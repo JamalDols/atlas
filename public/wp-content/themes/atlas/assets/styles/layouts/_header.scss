@@ -3,6 +3,8 @@ header.banner {
   height: 300px;
   padding-top: 40px;
   background-repeat: repeat-x;
+  position: relative;
+  z-index: 10;
   
   & > div {
     display: flex;
