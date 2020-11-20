@@ -9,6 +9,8 @@ use Roots\Sage\Wrapper;
 <html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
+  <div id="loader" class="visible" style="display:none;position:fixed; top:0; left:0; right:0; bottom:0; background:#56E086; z-index:99999; transition:opacity 2s ease-out"></div>
+  <script>document.getElementById('loader').style.display = '';</script>
     <!--[if IE]>
       <div class="alert alert-warning">
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>

@@ -18,7 +18,9 @@
     // All pages
     'common': {
       init: function() {
-        // JavaScript to be fired on all pages
+        setTimeout(function() {
+          $('#loader').removeClass("visible");
+        },1000);
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -29,9 +31,7 @@
       init: function() {
         
   
-        setTimeout(function() {
-          $('#loader').removeClass("visible");
-      },400);
+        
       
         function weatherBalloon( cityID ) {
           var key = '5ae5dc2aa1362553c7bc6bd20726631e';
