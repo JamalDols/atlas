@@ -174,7 +174,9 @@ $output[] = array(
           'address' => $post->address,
           'category'=> $post->category,
           'Latitude'=> $post->lat,
-          'Longitude'=>$post->lon
+          'Longitude'=>$post->lon,
+          'title'=>get_the_title(),
+          'url'=> get_permalink()
 );
  } 
 $json =json_encode($output);
@@ -237,11 +239,7 @@ zoomOffset: -1,
         // create a  geojson instance
         var categorynone = L.geoJson(geojsonData, {
             onEachFeature:function(feature, layer) {
-                let content ="<table class='table table-striped table-bordered table-condensed'>" +
-                    "<tr><th>Dirección:</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>Categoría: </th><td>" + feature.properties.category +"</td></tr><table>";
-
-                    
-                
+              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
                 layer.bindPopup(content);
                 console.log('fuera de : '+ feature.properties.address)
                 // markers.on('click', function (e) {
@@ -264,8 +262,7 @@ zoomOffset: -1,
         });
         var category1 = L.geoJson(geojsonData, {
             onEachFeature:function(feature, layer) {
-                let content ="<table class='table table-striped table-bordered table-condensed'>" +
-                    "<tr><th>Dirección:</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>Categoría: </th><td>" + feature.properties.category +"</td></tr><table>";
+              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
 
                     layer.bindPopup(content);
              
@@ -282,8 +279,7 @@ zoomOffset: -1,
 
         var category2 = L.geoJson(geojsonData, {
             onEachFeature:function(feature, layer) {
-                let content ="<table class='table table-striped table-bordered table-condensed'>" +
-                    "<tr><th>Dirección:</th><td>" + feature.properties.address + "</td></tr>" + "<tr><th>Categoría: </th><td>" + feature.properties.category +"</td></tr><table>";
+              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
                 
                 layer.bindPopup(content);
             },
