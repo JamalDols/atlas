@@ -26,7 +26,7 @@ use Roots\Sage\Wrapper;
     ?>
 
 
-        <main class="main">
+        <main <?php body_class(); ?>>
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
