@@ -1,0 +1,1995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<node>
+		<adminer471mysqldump><![CDATA[SET NAMES utf8;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[SET time_zone = '+00:00';]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[SET foreign_key_checks = 0;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[SET NAMES utf8mb4;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_commentmeta`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_commentmeta` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`meta_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `comment_id` (`comment_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `meta_key` (`meta_key`(191))]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_comments`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_comments` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_author` tinytext COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_author_email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_author_url` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_author_IP` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_content` text COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_karma` int(11) NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_approved` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '1',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_agent` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_type` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`comment_ID`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `comment_post_ID` (`comment_post_ID`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `comment_date_gmt` (`comment_date_gmt`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `comment_parent` (`comment_parent`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `comment_author_email` (`comment_author_email`(10))]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_duplicator_packages`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_duplicator_packages` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `hash` varchar(50) COLLATE utf8_unicode_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `status` int(11) NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `owner` varchar(60) COLLATE utf8_unicode_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `package` longtext COLLATE utf8_unicode_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `hash` (`hash`)]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_duplicator_packages` (`id`, `name`, `hash`, `status`, `created`, `owner`, `package`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(2,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(3,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(4,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_links`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_links` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_url` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_image` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_target` varchar(25) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_description` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_visible` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'Y',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_owner` bigint(20) unsigned NOT NULL DEFAULT '1',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_rating` int(11) NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_rel` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_notes` mediumtext COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `link_rss` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`link_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `link_visible` (`link_visible`)]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_options`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_options` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `option_name` varchar(191) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `option_value` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `autoload` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'yes',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`option_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  UNIQUE KEY `option_name` (`option_name`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `autoload` (`autoload`)]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(2,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(3,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(4,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(5,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(6,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(7,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(8,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(9,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(10,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(11,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(12,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(13,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(14,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(15,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(16,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(17,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(18,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(19,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(20,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(21,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(22,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(23,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(24,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(25,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(26,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(27,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(28,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(29,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(30,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(31,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(32,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(33,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(34,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(35,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(36,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(37,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(38,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(39,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(40,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(41,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(42,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(43,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(44,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(45,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(46,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(47,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(48,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(49,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(50,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(51,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(52,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(53,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(54,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(55,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(56,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(57,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(58,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(59,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(60,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(61,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(62,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(63,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(64,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(65,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(66,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(67,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(68,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(69,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(70,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(71,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(72,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(73,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(74,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(75,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(76,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(77,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(78,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(79,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(80,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(81,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(82,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(83,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(84,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(85,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(86,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(87,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(88,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(89,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(90,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(91,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(92,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(93,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(94,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(95,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(96,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(97,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(98,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(99,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(100,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(101,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(102,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(103,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(104,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(105,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(106,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(107,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(108,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(109,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(110,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(111,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(112,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(113,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(115,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(117,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(135,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(148,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(149,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(150,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(151,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(158,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(161,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(172,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(178,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(184,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(185,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(204,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(230,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(231,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(232,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(233,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(243,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(244,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(245,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(319,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(320,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(321,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(322,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(323,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(361,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(363,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(607,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(629,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(630,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(637,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(638,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(675,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(676,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(677,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(678,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(680,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(681,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(682,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(686,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(687,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(688,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(689,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(690,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(691,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(692,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(693,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(694,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(695,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(696,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(697,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_postmeta`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_postmeta` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`meta_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `post_id` (`post_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `meta_key` (`meta_key`(191))]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(2,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(5,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(6,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(7,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(8,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(9,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(10,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(11,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(12,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(13,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(14,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(15,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(16,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(17,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(18,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(19,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(20,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(21,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(22,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(23,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(24,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(25,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(26,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(27,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(28,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(29,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(30,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(31,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(32,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(33,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(34,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(35,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(36,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(37,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(38,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(39,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(40,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(78,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(79,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(80,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(81,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(82,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(83,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(84,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(85,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(86,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(87,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(88,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(89,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(90,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(91,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(92,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(93,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(94,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(95,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(96,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(97,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(98,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(99,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(100,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(101,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(102,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(103,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(104,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(105,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(106,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(107,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(108,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(109,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(110,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(111,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(112,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(113,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(114,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(115,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(116,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(117,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(118,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(119,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(120,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(121,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(122,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(123,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(124,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(125,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(126,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(127,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(128,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(129,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(130,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(131,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(132,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(133,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(134,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(135,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(136,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(137,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(138,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(139,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(140,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(141,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(142,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(143,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(144,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(145,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(146,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(147,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(148,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(149,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(150,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(151,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(152,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(153,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(154,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(155,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(156,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(157,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(158,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(159,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(160,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(161,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(162,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(163,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(164,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(165,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(166,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(167,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(168,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(169,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(170,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(171,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(172,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(173,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(174,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(175,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(176,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(177,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(178,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(179,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(180,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(181,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(182,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(184,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(185,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(186,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(187,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(188,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(189,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(190,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(191,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(192,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(193,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(194,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(196,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(197,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(198,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(199,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(200,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(201,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(202,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(203,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(204,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(205,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(206,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(207,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(208,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(209,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(219,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(220,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(221,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(224,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(225,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(226,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(229,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(230,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(235,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(240,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(241,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(242,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(243,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(244,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(245,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(246,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(247,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(248,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(249,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(250,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(251,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(252,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(253,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(254,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(255,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(256,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(257,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(258,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(259,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(260,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(261,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(262,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(263,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(264,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(265,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(266,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(267,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_posts`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_posts` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_content` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_title` text COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_excerpt` text COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'publish',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'open',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `ping_status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'open',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_password` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `to_ping` text COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `pinged` text COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_modified_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_content_filtered` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_parent` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `guid` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `menu_order` int(11) NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_type` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'post',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `post_mime_type` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `comment_count` bigint(20) NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`ID`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `post_name` (`post_name`(191)),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `post_parent` (`post_parent`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `post_author` (`post_author`)]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(2,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(3,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(7,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(9,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(10,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(11,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(13,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(14,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(15,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(16,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(17,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(18,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(19,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(20,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(21,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(32,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(33,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(34,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(35,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(37,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(38,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(39,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(41,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(42,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(43,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(44,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(45,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(46,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(47,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(48,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(49,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(50,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(51,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(53,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(54,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(55,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(56,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(57,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(58,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(59,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(60,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(61,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(62,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(63,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(64,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(65,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(66,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(67,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_termmeta`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_termmeta` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`meta_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `term_id` (`term_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `meta_key` (`meta_key`(191))]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_terms`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_terms` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `slug` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `term_group` bigint(10) NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`term_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `slug` (`slug`(191)),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `name` (`name`(191))]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(2,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_term_relationships`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_term_relationships` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `term_order` int(11) NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`object_id`,`term_taxonomy_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `term_taxonomy_id` (`term_taxonomy_id`)]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(43,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(46,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(51,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(54,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(56,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(58,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(67,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_term_taxonomy`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_term_taxonomy` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `taxonomy` varchar(32) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `description` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `parent` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `count` bigint(20) NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`term_taxonomy_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `taxonomy` (`taxonomy`)]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `description`, `parent`, `count`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(2,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_usermeta`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_usermeta` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`umeta_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `user_id` (`user_id`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `meta_key` (`meta_key`(191))]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(2,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(3,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(4,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(5,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(6,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(7,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(8,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(9,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(10,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(11,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(12,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(13,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(14,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(15,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(16,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(17,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(18,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(19,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(20,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(21,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(22,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(23,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(24,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(25,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(26,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(27,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(28,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(29,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[DROP TABLE IF EXISTS `wp_users`;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[CREATE TABLE `wp_users` (]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_login` varchar(60) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_pass` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_nicename` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_url` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_registered` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_activation_key` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `user_status` int(11) NOT NULL DEFAULT '0',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  `display_name` varchar(250) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  PRIMARY KEY (`ID`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `user_login_key` (`user_login`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `user_nicename` (`user_nicename`),]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[  KEY `user_email` (`user_email`)]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[(1,]]></adminer471mysqldump>
+	</node>
+	<node>
+		<adminer471mysqldump><![CDATA[-- 2020-11-24 14:49:40]]></adminer471mysqldump>
+	</node>
+</data>

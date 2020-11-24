@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<node>
+		<cdigo><![CDATA[EC0001]]></cdigo>
+		<latitud><![CDATA[39.272778]]></latitud>
+		<longitud><![CDATA[0.203333]]></longitud>
+		<direccin><![CDATA[Avda. Francia, 60]]></direccin>
+		<ttulocas><![CDATA[Estación Avenida de Francia]]></ttulocas>
+		<ttuloval><![CDATA[Estació Avinguda de França]]></ttuloval>
+		<descripcincas><![CDATA[Estación automática de control de la calidad del aire de la Red de Vigilancia de la Contaminación Atmosférica de la ciudad de València]]></descripcincas>
+		<descripcinval><![CDATA[Estació automàtica de control de la qualitat de l'aire de la Red de Vigilància de la Contaminació Atmosfèrica de la ciutat de València]]></descripcinval>
+		<imagen><![CDATA[EC0001.jpg]]></imagen>
+		<url><![CDATA[http://www.valencia.es/ayuntamiento/maparuido.nsf/0/05FB4A43AC14D732C125768D0047ED2E/$FILE/Francia_sept2017.pdf?OpenElement&lang=1]]></url>
+	</node>
+	<node>
+		<cdigo><![CDATA[EC0002]]></cdigo>
+		<latitud><![CDATA[39.270000]]></latitud>
+		<longitud><![CDATA[0.234722]]></longitud>
+		<direccin><![CDATA[Avda. Tres Cruces s/n (Parking Cementerio de Valencia)]]></direccin>
+		<ttulocas><![CDATA[Estación Bulevar Sur]]></ttulocas>
+		<ttuloval><![CDATA[Estació Bulevard Sud]]></ttuloval>
+		<descripcincas><![CDATA[Estación automática de control de la calidad del aire de la Red de Vigilancia de la Contaminación Atmosférica de la ciudad de València]]></descripcincas>
+		<descripcinval><![CDATA[Estació automàtica de control de la qualitat de l'aire de la Red de Vigilància de la Contaminació Atmosfèrica de la ciutat de València]]></descripcinval>
+		<imagen><![CDATA[EC0002.jpg]]></imagen>
+		<url><![CDATA[http://www.valencia.es/ayuntamiento/maparuido.nsf/0/160B986995AE016BC125768D00495CE6/$FILE/Bulevar%20Sur_marzo%202014.pdf?OpenElement&lang=1]]></url>
+	</node>
+	<node>
+		<cdigo><![CDATA[EC0003]]></cdigo>
+		<latitud><![CDATA[39.281389]]></latitud>
+		<longitud><![CDATA[0.223611]]></longitud>
+		<direccin><![CDATA[Pl. Ayuntamiento (fuente)]]></direccin>
+		<ttulocas><![CDATA[Estación Centro]]></ttulocas>
+		<ttuloval><![CDATA[Estació Centre]]></ttuloval>
+		<descripcincas><![CDATA[Estación automática de control de la calidad del aire de la Red de Vigilancia de la Contaminación Atmosférica de la ciudad de València]]></descripcincas>
+		<descripcinval><![CDATA[Estació automàtica de control de la qualitat de l'aire de la Red de Vigilància de la Contaminació Atmosfèrica de la ciutat de València]]></descripcinval>
+		<imagen><![CDATA[EC0003.jpg]]></imagen>
+		<url><![CDATA[http://www.valencia.es/ayuntamiento/maparuido.nsf/0/D6B318B40CEE2FD2C125768D0047C9CC/$FILE/20190423%20Centro_abril2019.pdf?OpenElement&lang=1]]></url>
+	</node>
+	<node>
+		<cdigo><![CDATA[EC0004]]></cdigo>
+		<latitud><![CDATA[39.285278]]></latitud>
+		<longitud><![CDATA[0.243055]]></longitud>
+		<direccin><![CDATA[Avda. Pío Baroja – Avda. General Avilés (Retén de Policía Molí del Sol)]]></direccin>
+		<ttulocas><![CDATA[Estación Molí del Sol]]></ttulocas>
+		<ttuloval><![CDATA[Estació Molí del Sol]]></ttuloval>
+		<descripcincas><![CDATA[Estación automática de control de la calidad del aire de la Red de Vigilancia de la Contaminación Atmosférica de la ciudad de València]]></descripcincas>
+		<descripcinval><![CDATA[Estació automàtica de control de la qualitat de l'aire de la Red de Vigilància de la Contaminació Atmosfèrica de la ciutat de València]]></descripcinval>
+		<imagen><![CDATA[EC0004.jpg]]></imagen>
+		<url><![CDATA[http://www.valencia.es/ayuntamiento/maparuido.nsf/0/1DB43CF9AC99C0DEC125768D00497DB7/$FILE/20190423%20Mol%C3%AD%20del%20Sol_abril2019.pdf?OpenElement&lang=1]]></url>
+	</node>
+	<node>
+		<cdigo><![CDATA[EC0005]]></cdigo>
+		<latitud><![CDATA[39.272778]]></latitud>
+		<longitud><![CDATA[0.220833]]></longitud>
+		<direccin><![CDATA[C/ Filipinas s/n]]></direccin>
+		<ttulocas><![CDATA[Estación Pista de Silla]]></ttulocas>
+		<ttuloval><![CDATA[Estació Pista de Silla]]></ttuloval>
+		<descripcincas><![CDATA[Estación automática de control de la calidad del aire de la Red de Vigilancia de la Contaminación Atmosférica de la ciudad de València]]></descripcincas>
+		<descripcinval><![CDATA[Estació automàtica de control de la qualitat de l'aire de la Red de Vigilància de la Contaminació Atmosfèrica de la ciutat de València]]></descripcinval>
+		<imagen><![CDATA[EC0005.jpg]]></imagen>
+		<url><![CDATA[http://www.valencia.es/ayuntamiento/maparuido.nsf/0/9FEC00A8DDEE01A1C125768D004999AC/$FILE/20190423%20Pista%20de%20Silla_abril2019.pdf?OpenElement&lang=1]]></url>
+	</node>
+	<node>
+		<cdigo><![CDATA[EC0006]]></cdigo>
+		<latitud><![CDATA[39.284722]]></latitud>
+		<longitud><![CDATA[0.201389]]></longitud>
+		<direccin><![CDATA[Campus de la Universidad Politécnica. Avda. Tarongers]]></direccin>
+		<ttulocas><![CDATA[Estación Universidad Politécnica]]></ttulocas>
+		<ttuloval><![CDATA[Estació Universitat Politècnica]]></ttuloval>
+		<descripcincas><![CDATA[Estación automática de control de la calidad del aire de la Red de Vigilancia de la Contaminación Atmosférica de la ciudad de València]]></descripcincas>
+		<descripcinval><![CDATA[Estació automàtica de control de la qualitat de l'aire de la Red de Vigilància de la Contaminació Atmosfèrica de la ciutat de València]]></descripcinval>
+		<imagen><![CDATA[EC0006.jpg]]></imagen>
+		<url><![CDATA[http://www.valencia.es/ayuntamiento/maparuido.nsf/0/07F2AEABA8288033C125768D0049B0F9/$FILE/20190423%20UPV_abril2019.pdf?OpenElement&lang=1]]></url>
+	</node>
+	<node>
+		<cdigo><![CDATA[EC0007]]></cdigo>
+		<latitud><![CDATA[39.284722]]></latitud>
+		<longitud><![CDATA[0.221111]]></longitud>
+		<direccin><![CDATA[Jardines de Viveros]]></direccin>
+		<ttulocas><![CDATA[Estación Viveros]]></ttulocas>
+		<ttuloval><![CDATA[Estació Vivers]]></ttuloval>
+		<descripcincas><![CDATA[Estación automática de control de la calidad del aire de la Red de Vigilancia de la Contaminación Atmosférica de la ciudad de València]]></descripcincas>
+		<descripcinval><![CDATA[Estació automàtica de control de la qualitat de l'aire de la Red de Vigilància de la Contaminació Atmosfèrica de la ciutat de València]]></descripcinval>
+		<imagen><![CDATA[EC0007.jpg]]></imagen>
+		<url><![CDATA[http://www.valencia.es/ayuntamiento/maparuido.nsf/0/870B147E1B75E834C12583E5003B7610/$FILE/Viveros_sept2017.pdf?OpenElement&lang=1]]></url>
+	</node>
+</data>
