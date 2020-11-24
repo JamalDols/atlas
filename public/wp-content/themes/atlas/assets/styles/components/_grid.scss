@@ -20,7 +20,7 @@
 body {
   line-height: 1.2;
 }
-.main {
+main {
   position: relative;
   z-index: 10;
 }
@@ -362,6 +362,14 @@ footer {
 
 
 
+  }
+
+  main.single-lugar {
+    padding-bottom: 120px;
+    #mapid {
+      height: 320px;
+      border: 3px solid #ece1cb;
+    }
   }
 
 //Mouse behaviour 
