@@ -29,7 +29,7 @@
         </div>
         <div id="mapid">
 
-        <iframe width="100%" height="100%" frameborder="0" allowfullscreen="" src="//umap.openstreetmap.fr/es/map/viabahia_468869?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/es/map/test-para-valencia-sostenible_528064?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
         
         </div>
       </div>
