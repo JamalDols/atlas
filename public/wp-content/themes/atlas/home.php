@@ -112,31 +112,54 @@ get_template_part('templates/header');
       <div class="col-md-12 col-lg-3">
         <h1 class="title--home">Notícies</h1>
       </div>
-      <?php
-$args = array(
-'post_type' => 'post',
-'posts_per_page' => 3,
-);
-$query = new WP_Query( $args );
-?>
-      
-      <?php while( $query->have_posts() ) : $query->the_post() ?>
 
+
+        <?php // Get RSS Feed(s)
+        include_once( ABSPATH . WPINC . '/feed.php' );
+          
+        // Get a SimplePie feed object from the specified feed source.
+        $rss = fetch_feed( 'http://canviclimatic.org/feed/' );
+          
+        $maxitems = 0;
+          
+        if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
+          
+            // Figure out how many total items there are, but limit it to 5. 
+            $maxitems = $rss->get_item_quantity( 3 ); 
+          
+            // Build an array of all the items, starting with element 0 (first element).
+            $rss_items = $rss->get_items( 0, $maxitems );
+          
+        endif;
+        ?>
+
+
+        <?php if ( $maxitems == 0 ) : ?>
+        <li><?php _e( 'No items', 'wpdocs_textdomain' ); ?></li>
+        <?php else : ?>
+        <?php // Loop through each feed item and display each item as a hyperlink. ?>
+        <?php foreach ( $rss_items as $item ) : ?>
         <div class="col-md-6 col-lg-3 card--news__home">
           <div class="item-news">
-            <a class="permalink" href="<?= the_permalink() ?>"></a>
-            <div class="image--container">
+            <a class="permalink" href="<?php echo esc_url( $item->get_permalink() ); ?>"></a>
+            <div class="image--container d-none">
               <div class="image"
-                style="background-image:url(<?= the_post_thumbnail_url() ?>)">
+                style="background-image:url(<?php //echo esc_url( $item->get_the_post_thumbnail_url() );// ?>)">
               </div>
             </div>
             <div class="box-color">
-              <span class="date"><?= get_the_date( 'd.m.Y', get_the_ID() ); ?></span>
-              <span class="text"><?php the_title() ?></span>
+              <span class="date"><?php echo esc_html($item->get_date( 'd.m.Y', get_the_ID() )); ?></span>
+              <span class="text"><?php echo esc_html( $item->get_title() ) ?></span>
             </div>
           </div>
         </div>
-        <?php endwhile; wp_reset_postdata(); ?>
+        <?php endforeach; ?>
+        <?php endif; ?>
+
+
+
+
+    
     </div>
   </div>
   </div>
