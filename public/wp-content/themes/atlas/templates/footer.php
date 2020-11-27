@@ -1,7 +1,7 @@
 <footer class="primary-footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-6 col-lg-3">
         <nav class="nav-primary">
         <?php
         if (has_nav_menu('primary_navigation')) :
@@ -10,7 +10,7 @@
         ?>
         </nav>
       </div>
-      <div class="col-md-3 address">
+      <div class="col-md-6 col-lg-3 address">
         <p>
           València Clima i Energia<br>
           C/ Joan Verdeguer, 16. València
@@ -20,7 +20,7 @@
           canviclimatic@canviclimatic.org
         </p>
       </div>
-      <div class="col-md-6 logos-footer">
+      <div class="col-md-12 col-lg-6 logos-footer">
         <div class="image img-ajuntament">
           <img class="img-fluid" src="<?= get_template_directory_uri(); ?>/dist/images/logo-ajuntament.svg" alt="">
       </div>
