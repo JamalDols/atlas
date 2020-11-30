@@ -75,6 +75,7 @@ get_template_part('templates/header');
         <h1 class="title--home">Altres mapes d’interés</h1>
       </div>
       <div class="col-md-12 col-lg-3 card--poi">
+        <a class="permalink" href="#"></a>
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-1.svg);">
@@ -85,6 +86,7 @@ get_template_part('templates/header');
         </div>
       </div>
       <div class="col-md-12 col-lg-3 card--poi">
+        <a class="permalink" href="#"></a>
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-2.svg);">
@@ -95,6 +97,7 @@ get_template_part('templates/header');
         </div>
       </div>
       <div class="col-md-12 col-lg-3 card--poi">
+        <a class="permalink" href="#"></a>
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-3.svg);">
