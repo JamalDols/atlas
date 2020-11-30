@@ -5,13 +5,34 @@ header.banner {
   background-repeat: repeat-x;
   position: relative;
   z-index: 10;
-  
+  pointer-events: none;
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    @include media-breakpoint-down(xs) {
+      flex-wrap: wrap;
+    }
+  }
   & > div {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
   }
+  .brand {
+    width: 140px;
+    pointer-events: all;
+    img {
+
+    }
+  }
   .nav {
+    pointer-events: all;
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+      position: relative;
+      left: 15px;
+      margin: 20px 0 0;
+    }
     li {
       margin-left: 30px;
       &.current-menu-item {
@@ -32,10 +53,3 @@ header.banner {
   }
 }
 
-.page-header {
-  margin-bottom: 60px;
-  h1 {
-    font-weight: 400;
-    font-size: 60px;
-  }
-}

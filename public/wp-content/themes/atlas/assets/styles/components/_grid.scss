@@ -19,10 +19,14 @@
 
 body {
   line-height: 1.2;
+  &#tinymce {
+    background: inherit;
+  }
 }
 main {
   position: relative;
   z-index: 10;
+  min-height: calc(100vh - 500px);
 }
 
 //Loader
@@ -54,10 +58,21 @@ main {
     @include media-breakpoint-down(md) {
       margin-bottom: 30px;
     }
+    a.permalink {
+      width: calc(100% - 15px);
+      height: 100%;
+      position: absolute;
+      &:hover {
+        & + .box-color{
+          background: darken($green-alt, 10);
+        }
+      }
+    }    
     .box-color {
       background-color: $green-alt;
       min-height: 150px;
       padding:15px;
+      transition: background 400ms ease;
       @include media-breakpoint-down(md) {
         height: 200px;
       }
@@ -120,6 +135,11 @@ main {
             transform: scale(1.5);
             
           }
+          & + .image--container + .box-color{
+            
+              background: darken($green-alt, 10);
+            
+          }
         }
       }
     }
@@ -136,7 +156,8 @@ main {
     background:$green-alt;
     color:white;
     padding:15px;
-    min-height: 140px;
+    min-height: 160px;
+    transition: background 400ms ease;
   }
   .date {
     display: block;
@@ -167,15 +188,18 @@ main {
   .weather-info--col {
     font-size: 66px;
     color: white; 
-    @include media-breakpoint-down (md) {
-      width: 50%;
-      text-align: center;
-      margin: 0 0 20px;
+    @include media-breakpoint-down (sm) {
+      font-size: 40px;
+    }
+    @include media-breakpoint-down (xs) {
+      font-size: 40px;
     }
     #icon {
-      @include media-breakpoint-down (md) {
-        margin: 0 auto;
+      width: 100px;
+      @include media-breakpoint-down (sm) {
+        width: 70px;
       }
+      
       
     }
   }
@@ -325,9 +349,14 @@ footer {
 .leaflet-control-attribution.leaflet-control {
   display: none !important;
 }
+.leaflet-top.leaflet-right {
+  position: absolute;
+  top: auto;
+  bottom: 70px;
+  right: 0;
+}
 div.leaflet-container {
-  font-family: $baseFont !important;
-
+  font-family: $baseFont !important;  
   .leaflet-popup-content {
     line-height: 1.2;
     margin: 23px 29px 13px 19px;
@@ -500,3 +529,49 @@ div.leaflet-container {
   pointer-events: none;
 }
 
+
+//Suggeriments
+main.page-template-template-suggeriments {
+  .page-header {
+    h1 {
+      margin: 0 0 50px;
+    }
+  }
+  section.contact-form {
+    input, textarea {
+      background: transparent;
+      border: 1px solid white;
+      border-radius: 10px;
+      resize: none;
+      &::placeholder {
+        color: $black;
+      } 
+      
+    }
+    input.wpcf7-submit {
+      color: $black;
+      padding: 10px 15px;
+      margin-left: 15px;
+    }
+    .form-check {
+      padding-left: 15px;
+      font-size: 12px;
+      label {
+        margin: 0;
+        display: flex;
+        align-items: flex-end;
+        a {
+          margin: 0 3px;
+        }
+      }
+    }
+    .textarea-container {
+      & > * {
+        height: 100%;
+      }  
+      textarea {
+        min-height: 420px;
+      }
+    }
+  }
+}
