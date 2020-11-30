@@ -474,6 +474,19 @@ div.leaflet-container {
 
 .circle {
   position: fixed;
+  border: 1px solid #fff;
+  width: 20px;
+  height: 20px;
+  left:-10px;
+  top:-10px;
+  border-radius: 100%;
+  z-index: 10000;
+  transform: scale(1);
+  background: transparent;
+  pointer-events: none;
+}
+.circle-follow {
+  position: fixed;
   width: 1000px;
   height: 1000px;
   left: -500px;
@@ -484,5 +497,6 @@ div.leaflet-container {
   background-image:url('#{$path-image}/mouse.svg');
   background-position: center;
   background-repeat: no-repeat;
+  pointer-events: none;
 }
 

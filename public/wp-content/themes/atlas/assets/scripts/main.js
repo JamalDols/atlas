@@ -24,14 +24,19 @@
         },1000);
 
         //Mouse behaviour
-          var $circle = $('.circle')
+          var $circle = $('.circle'),
+          $follow = $('.circle-follow');
 
           function moveCircle(e) {
             TweenLite.to($circle, 0.3, {
-              x: e.clientX,
-              y: e.clientY
-            });
-          }
+                  x: e.clientX,
+                  y: e.clientY
+              });
+            TweenLite.to($follow, 2, {
+                  x: e.clientX,
+                  y: e.clientY
+              });  
+            }
 
           $(window).on('mousemove', moveCircle);
 
