@@ -10,6 +10,7 @@
 $title = get_the_title(); 
 $subtitle = get_field('subtitle'); 
 $address = get_field('address'); 
+$url = get_field('url'); 
 $lat = get_field('lat'); 
 $lon = get_field('lon'); 
 $category = get_field('category'); 
@@ -24,16 +25,7 @@ $category = get_field('category');
 <?php while (have_posts()) : the_post(); ?>
 
 
-<section class="page-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1><?php echo $title ?></h1>
-        <span class="address"><?php echo $address ?></span>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <?php endwhile; ?>
 
@@ -43,6 +35,11 @@ $category = get_field('category');
   <div class="container">
     <div class="row">
       <div class="col-md-6">
+        <section class="venue--header">
+          <h1><?php echo $title ?></h1>
+          <span class="address"><?php echo $address ?></span>
+          <span class="info"><a href="<?php echo $url ?>">Más información</a></span>
+        </section>
         <div class="venue--content">
         <?= the_content() ?>
         </div>
@@ -55,10 +52,9 @@ $category = get_field('category');
                 <img src="http://via.placeholder.com/850x500?text=No+Image" />
           <?php } ?>
         </div>
+      </div>
+      <div class="col-12">
         <div id="mapid">
-
-        <iframe width="100%" height="100%" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/es/map/test-para-valencia-sostenible_528064?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
-        
         </div>
       </div>
     </div>
