@@ -66,7 +66,7 @@ get_template_part('templates/header');
           <span id="humidity"></span>
         </div>
         <div class="weather-info--col">
-          <div id="icon" style="width: 100px;"><img id="wicon" src="" alt=""></div>
+          <div id="icon"><img id="wicon" src="" alt=""></div>
         </div>
       </div>
     </div>
