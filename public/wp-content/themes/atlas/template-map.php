@@ -116,7 +116,6 @@ zoomOffset: -1,
                     
                 
                 layer.bindPopup(content);
-                console.log('fuera de : '+ feature.properties.address)
                 // markers.on('click', function (e) {
                 //   layer.bindPopup(content);
                 //   console.log('show');

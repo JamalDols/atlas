@@ -80,7 +80,7 @@
           var icon = d.weather[0].icon;
           var iconUrl = "http://www.atlas.local/wp-content/themes/atlas/dist/images/wicons/" + icon + ".svg";
           
-          console.log('Description: ' + description + ' icon file: ' + icon)
+          
           
       
           function pad(num) { 
@@ -94,16 +94,7 @@
             return pad(hours)+":"+pad(minutes)+":"+pad(seconds)
           }
       
-          function dayNight(x, min, max) {
-            return ((x-min)*(x-max) <= 0);
-          }
-                
-          if(dayNight){ //Si es true es de dia 
-            $('body').addClass('is-day');
-          } else {
-            $('body').addClass('is-night');
-          }
-          console.log(dayNight);
+
           
           
       
@@ -113,17 +104,10 @@
       
       
           document.getElementById('temp').innerHTML = celsius + '&deg;';
-          document.getElementById('humidity').innerHTML = humidity + '%';
+          document.getElementById('humidity').innerHTML = humidity + '<sub>%</sub>';
           $('#wicon').attr('src', iconUrl);
         
           
-          // if( description.indexOf('rain') > 0 ) {
-          //   document.body.className = 'rainy';
-          // } else if( description.indexOf('cloud') > 0 ) {
-          //   document.body.className = 'cloudy';
-          // } else if( description.indexOf('sunny') > 0 ) {
-          //   document.body.className = 'sunny';
-          // }
     
         }
 

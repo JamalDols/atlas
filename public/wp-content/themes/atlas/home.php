@@ -229,7 +229,6 @@ zoomOffset: -1,
             onEachFeature:function(feature, layer) {
               let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
                 layer.bindPopup(content);
-                console.log('fuera de : '+ feature.properties.address)
                 // markers.on('click', function (e) {
                 //   layer.bindPopup(content);
                 //   console.log('show');
