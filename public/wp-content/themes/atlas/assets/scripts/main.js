@@ -51,14 +51,37 @@
       init: function() {
         
   
+        function drawWeather( d ) {
+          var celsius = Math.round(parseFloat(d.main.temp)-273.15);
+          var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+          var description = d.weather[0].description;
+          var humidity = d.main.humidity;
+          var icon = d.weather[0].icon;
+          var iconUrl = "http://www.atlas.local/wp-content/themes/atlas/dist/images/wicons/" + icon + ".svg";
         
+          function pad(num) { 
+            return ("0"+num).slice(-2);
+          }
+          function getTimeFromDate(timestamp) {
+            var date = new Date(timestamp * 1000);
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            return pad(hours)+":"+pad(minutes)+":"+pad(seconds);
+          }
+          document.getElementById('temp').innerHTML = celsius + '&deg;';
+          document.getElementById('humidity').innerHTML = humidity + '<sub>%</sub>';
+          $('#wicon').attr('src', iconUrl);
+        
+          
+    
+        }
       
         function weatherBalloon( cityID ) {
           var key = '5ae5dc2aa1362553c7bc6bd20726631e';
           fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key + '&lang=es')  
           .then(function(resp) { return resp.json(); }) // Convert data to json
           .then(function(data) {
-            console.log(data);
             drawWeather(data);
             getTimeFromDate();
           })
@@ -72,44 +95,7 @@
         };
         
         
-        function drawWeather( d ) {
-          var celsius = Math.round(parseFloat(d.main.temp)-273.15);
-          var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
-          var description = d.weather[0].description;
-          var humidity = d.main.humidity;
-          var icon = d.weather[0].icon;
-          var iconUrl = "http://www.atlas.local/wp-content/themes/atlas/dist/images/wicons/" + icon + ".svg";
-          
-          
-          
-      
-          function pad(num) { 
-            return ("0"+num).slice(-2);
-          }
-          function getTimeFromDate(timestamp) {
-            var date = new Date(timestamp * 1000);
-            var hours = date.getHours();
-            var minutes = date.getMinutes();
-            var seconds = date.getSeconds();
-            return pad(hours)+":"+pad(minutes)+":"+pad(seconds)
-          }
-      
 
-          
-          
-      
-          
-      
-      
-      
-      
-          document.getElementById('temp').innerHTML = celsius + '&deg;';
-          document.getElementById('humidity').innerHTML = humidity + '<sub>%</sub>';
-          $('#wicon').attr('src', iconUrl);
-        
-          
-    
-        }
 
 
         
