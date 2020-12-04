@@ -296,6 +296,9 @@ footer {
     z-index: 100000;
     width: 100%;
   }
+  #map {
+    height: calc(100vh - 207px);
+  }
 }
 
 //Page Itineraris
@@ -346,6 +349,10 @@ footer {
 
 
 //Component Map 
+#map-main,
+#map {
+  height: 500px;
+}
 .leaflet-control-attribution.leaflet-control {
   display: none !important;
 }
