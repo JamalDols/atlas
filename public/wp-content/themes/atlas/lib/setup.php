@@ -102,5 +102,7 @@ function assets() {
   
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
   wp_enqueue_script( 'tweenMax', get_template_directory_uri() . '/vendor/js/TweenMax.min.js', array(), null, false );
+  wp_enqueue_script( 'leaflet', get_template_directory_uri() . '/vendor/js/leaflet.js', array(), null, false );
+  wp_enqueue_script( 'markerCluster', get_template_directory_uri() . '/vendor/js/leaflet.markercluster.js', array(), null, false );
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
