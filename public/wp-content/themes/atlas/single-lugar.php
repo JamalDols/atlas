@@ -46,11 +46,74 @@ $category = get_field('category');
       </div>
       <div class="col-md-6">
         <div class="venue--single__image">
-          <?php if ( has_post_thumbnail() ) {
-                the_post_thumbnail();
-                } else { ?>
-                <img src="http://via.placeholder.com/850x500?text=No+Image" />
-          <?php } ?>
+
+
+
+
+          <?php 
+
+$images = get_field('gallery');
+if( $images ): ?>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <?php foreach( $images as $image ): ?>
+            <div class="swiper-slide" style="background-image: url(<?php echo esc_url($image['sizes']['large']); ?>);    background-size: cover; background-position: center;">
+
+            </div>
+            <?php endforeach; ?>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+        </div>
+
+        <script>
+        const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
+        </script>
+
+<?php else : 
+  
+  the_post_thumbnail();
+  ?>
+
+         
+  
+       
+
+
+<?php endif ?>
+
+
+
+
+
+        <style>
+          .swiper-container {
+            width: 100%;
+            height: 300px;
+          }
+        </style>
+
+
+
+
         </div>
       </div>
       <div class="col-12">

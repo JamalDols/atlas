@@ -582,3 +582,16 @@ main.page-template-template-suggeriments {
     }
   }
 }
+
+//Swiper
+
+.swiper-pagination-bullet {
+  background: white;
+  &.swiper-pagination-bullet-active {
+    background: white;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+}
