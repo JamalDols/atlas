@@ -82,121 +82,32 @@ zoomOffset: -1,
             }
 
         });
-        var category1 = L.geoJson(geojsonData, {
-            onEachFeature:function(feature, layer) {
-              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
 
-                    layer.bindPopup(content);
-             
-            },
-            pointToLayer:function(geoObj, latLng) {
-                return L.marker(latLng);
-              
-            },
-            filter:function (feature,layer){
-                return feature.properties.category == "categoria1";  
-            }
 
-        });
 
-        var category2 = L.geoJson(geojsonData, {
-            onEachFeature:function(feature, layer) {
-              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+        for (let i = 1; i < 8; i++) {
+
+            this["category"+i] = L.geoJson(geojsonData, {
+                onEachFeature:function(feature, layer) {
+                let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+
+                        layer.bindPopup(content);
                 
-                layer.bindPopup(content);
-            },
-            pointToLayer:function(geoObj, latLng) {
-                return L.marker(latLng);
-              
-            },
-            filter:function (feature,layer){
-                return feature.properties.category == "categoria2";  
-            }
-
-        });
-
-        var category3 = L.geoJson(geojsonData, {
-            onEachFeature:function(feature, layer) {
-              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+                },
+                pointToLayer:function(geoObj, latLng) {
+                    return L.marker(latLng);
                 
-                layer.bindPopup(content);
-            },
-            pointToLayer:function(geoObj, latLng) {
-                return L.marker(latLng);
-              
-            },
-            filter:function (feature,layer){
-                return feature.properties.category == "categoria3";  
-            }
+                },
+                filter:function (feature,layer){
+                    return feature.properties.category == "categoria" +i;  
+                }
 
-        });
+            });
 
-        var category4 = L.geoJson(geojsonData, {
-            onEachFeature:function(feature, layer) {
-              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
-                
-                layer.bindPopup(content);
-            },
-            pointToLayer:function(geoObj, latLng) {
-                return L.marker(latLng);
-              
-            },
-            filter:function (feature,layer){
-                return feature.properties.category == "categoria4";  
-            }
 
-        });
-        var category5 = L.geoJson(geojsonData, {
-            onEachFeature:function(feature, layer) {
-              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
-                
-                layer.bindPopup(content);
-            },
-            pointToLayer:function(geoObj, latLng) {
-                return L.marker(latLng);
-              
-            },
-            filter:function (feature,layer){
-                return feature.properties.category == "categoria5";  
-            }
+        }
 
-        });
-
-        var category6 = L.geoJson(geojsonData, {
-            onEachFeature:function(feature, layer) {
-              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
-                
-                layer.bindPopup(content);
-            },
-            pointToLayer:function(geoObj, latLng) {
-                return L.marker(latLng);
-              
-            },
-            filter:function (feature,layer){
-                return feature.properties.category == "categoria6";  
-            }
-
-        });
-
-        var category7 = L.geoJson(geojsonData, {
-            onEachFeature:function(feature, layer) {
-              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
-                
-                layer.bindPopup(content);
-            },
-            pointToLayer:function(geoObj, latLng) {
-                return L.marker(latLng);
-              
-            },
-            filter:function (feature,layer){
-                return feature.properties.category == "categoria7";  
-            }
-
-        });
-        
-         
-          
-        var all = L.layerGroup([category1,category2]);
+        var all = L.layerGroup([category1,category2,category3,category4,category5,category6,category7]);
         L.control.layers({
             "Tots":markers,
             "Refugis climàtics": category1,
