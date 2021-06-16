@@ -114,16 +114,99 @@ zoomOffset: -1,
             }
 
         });
+
+        var category3 = L.geoJson(geojsonData, {
+            onEachFeature:function(feature, layer) {
+              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+                
+                layer.bindPopup(content);
+            },
+            pointToLayer:function(geoObj, latLng) {
+                return L.marker(latLng);
+              
+            },
+            filter:function (feature,layer){
+                return feature.properties.category == "categoria3";  
+            }
+
+        });
+
+        var category4 = L.geoJson(geojsonData, {
+            onEachFeature:function(feature, layer) {
+              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+                
+                layer.bindPopup(content);
+            },
+            pointToLayer:function(geoObj, latLng) {
+                return L.marker(latLng);
+              
+            },
+            filter:function (feature,layer){
+                return feature.properties.category == "categoria4";  
+            }
+
+        });
+        var category5 = L.geoJson(geojsonData, {
+            onEachFeature:function(feature, layer) {
+              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+                
+                layer.bindPopup(content);
+            },
+            pointToLayer:function(geoObj, latLng) {
+                return L.marker(latLng);
+              
+            },
+            filter:function (feature,layer){
+                return feature.properties.category == "categoria5";  
+            }
+
+        });
+
+        var category6 = L.geoJson(geojsonData, {
+            onEachFeature:function(feature, layer) {
+              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+                
+                layer.bindPopup(content);
+            },
+            pointToLayer:function(geoObj, latLng) {
+                return L.marker(latLng);
+              
+            },
+            filter:function (feature,layer){
+                return feature.properties.category == "categoria6";  
+            }
+
+        });
+
+        var category7 = L.geoJson(geojsonData, {
+            onEachFeature:function(feature, layer) {
+              let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+                
+                layer.bindPopup(content);
+            },
+            pointToLayer:function(geoObj, latLng) {
+                return L.marker(latLng);
+              
+            },
+            filter:function (feature,layer){
+                return feature.properties.category == "categoria7";  
+            }
+
+        });
         
          
           
-        var all = L.layerGroup([category1,category2,categorynone]);
+        var all = L.layerGroup([category1,category2]);
         L.control.layers({
-            "All":all,
-            "categorynone":categorynone,
-            "category1":category1,
-            "category2":category2,
-            "cluster":markers,
+            "Tots":markers,
+            "Refugis climàtics": category1,
+            "Equipaments públics d'educació i informació ambiental": category2,
+            "Escoles adherides a l'EAR, al 50/50 o amb programes de sostenibilitat": category3,
+            "Elements públics de generació d'energia": category4,
+            "Comunitats energètiques": category5,
+            "Museus amb temàtica ambiental": category6,
+            "Elements d'adaptació al canvi climàtic i l'efecte illa de calor": category7,
+            
         }).addTo(map);
         markers.addLayer(all);
         markers.addTo(map);
