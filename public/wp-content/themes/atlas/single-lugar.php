@@ -10,6 +10,7 @@
 $title = get_the_title(); 
 $subtitle = get_field('subtitle'); 
 $address = get_field('address'); 
+$description = get_field('description'); 
 $url = get_field('url'); 
 $lat = get_field('lat'); 
 $lon = get_field('lon'); 
@@ -38,6 +39,7 @@ $category = get_field('category');
         <section class="venue--header">
           <h1><?php echo $title ?></h1>
           <span class="address"><?php echo $address ?></span>
+          <span class="description"><?php echo $description ?></span>
           <span class="info"><a href="<?php echo $url ?>">Más información</a></span>
         </section>
         <div class="venue--content">
@@ -150,7 +152,7 @@ popup
 .openOn(mymap);
 }
 
-mymap.on('click', onMapClick);
+// mymap.on('click', onMapClick);
 </script>
 
 

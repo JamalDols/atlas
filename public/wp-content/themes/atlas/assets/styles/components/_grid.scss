@@ -595,3 +595,14 @@ main.page-template-template-suggeriments {
 .swiper-button-next {
   color: white;
 }
+
+
+.marker-cluster-small {
+  background-color: rgba(11,111,255,.6) !important;
+  & > div {
+    background-color: rgba(11,111,255,1) !important;
+    & > span {
+      color: white;
+    }
+  }
+}
