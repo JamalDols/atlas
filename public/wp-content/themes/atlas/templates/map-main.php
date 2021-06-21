@@ -16,7 +16,6 @@
 ?>
     <script>
         var data = <?php echo $json ?>;
-        // Create map instance
         var map = L.map('map',{
             center:[39.4697500, -0.3773900],
             zoom:14,
@@ -33,9 +32,7 @@ tileSize: 512,
 zoomOffset: -1,
 }).addTo(map);
 
-        //create markerclustergroup 
         var markers=L.markerClusterGroup();
-        // create a geojson object
         let geojsonData = createGeoJson(data);
 
         function createGeoJson(data) {
@@ -46,7 +43,6 @@ zoomOffset: -1,
                 ]
             };
 
-            // iterate through the data array
             data.forEach(element => {
                 let marker = L.marker([element.Latitude, element.Longitude]);
                 let pntGeojson = marker.toGeoJSON();
@@ -59,19 +55,11 @@ zoomOffset: -1,
         }
 
 
-        // create a  geojson instance
+  
         var categorynone = L.geoJson(geojsonData, {
             onEachFeature:function(feature, layer) {
               let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
                 layer.bindPopup(content);
-                // markers.on('click', function (e) {
-                //   layer.bindPopup(content);
-                //   console.log('show');
-                //   console.log('dentro de función: '+ feature.properties.address)
-                //   console.log(content);
-                //   $(".modal-content").html('Marker id: ' + feature.properties.address);
-                //   $('#emptymodal').addClass('visible');
-                // });
             },
             pointToLayer:function(geoObj, latLng) {
                 return L.marker(latLng);
@@ -87,15 +75,25 @@ zoomOffset: -1,
 
         for (let i = 1; i < 8; i++) {
 
+            let markerIcon = L.icon({
+                iconUrl: '../wp-content/themes/atlas/dist/images/leaflet/ico-category-' + i + '.png',
+                iconSize:     [25, 41], 
+                iconAnchor:   [12, 41], 
+                popupAnchor:  [0, -41] 
+
+            });
+
+
+            
             this["category"+i] = L.geoJson(geojsonData, {
                 onEachFeature:function(feature, layer) {
                 let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
-
-                        layer.bindPopup(content);
+                 layer.bindPopup(content);
                 
                 },
                 pointToLayer:function(geoObj, latLng) {
-                    return L.marker(latLng);
+                    return L.marker(latLng, {icon: markerIcon});
+                    // return L.marker(latLng);
                 
                 },
                 filter:function (feature,layer){
