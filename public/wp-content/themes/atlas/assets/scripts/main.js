@@ -147,7 +147,34 @@
       init: function() {
         // JavaScript to be fired on the about us page
       }
-    }
+    },
+    'single_lugar':{
+      init: function(){
+        const swiper = new Swiper('.swiper-container', {
+          // Optional parameters
+          direction: 'horizontal',
+          loop: true,
+        
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        
+        });
+        if($(".swiper-pagination-bullet").length == 1) {
+          $('.swiper-wrapper').addClass( "disabled" );
+          $('.swiper-pagination').addClass( "disabled" );
+          $('.swiper-button-prev').addClass( "disabled" );
+          $('.swiper-button-next').addClass( "disabled" );
+      }
+      }
+    } 
   };
 
   // The routing fires all common scripts, followed by the page specific scripts.

@@ -596,6 +596,16 @@ main.page-template-template-suggeriments {
   color: white;
 }
 
+.swiper-wrapper.disabled {
+  transform: translate3d(0px, 0, 0) !important;
+}
+.swiper-button-prev.disabled,
+.swiper-button-next.disabled,
+.swiper-pagination.disabled {
+  display: none;
+}
+
+
 
 .marker-cluster-small {
   background-color: rgba(11,111,255,.6) !important;

@@ -71,23 +71,7 @@ if( $images ): ?>
         </div>
 
         <script>
-        const swiper = new Swiper('.swiper-container', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-});
         </script>
 
 <?php else : 
@@ -109,7 +93,7 @@ if( $images ): ?>
         <style>
           .swiper-container {
             width: 100%;
-            height: 300px;
+            height: 420px;
           }
         </style>
 

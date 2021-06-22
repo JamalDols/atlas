@@ -18,7 +18,7 @@
         var data = <?php echo $json ?>;
         var map = L.map('map',{
             center:[39.4697500, -0.3773900],
-            zoom:14,
+            zoom:13,
             zoomControl: false
         });
         L.control.zoom({
@@ -76,7 +76,8 @@ zoomOffset: -1,
         for (let i = 1; i < 8; i++) {
 
             let markerIcon = L.icon({
-                iconUrl: '../wp-content/themes/atlas/dist/images/leaflet/ico-category-' + i + '.png',
+                
+                iconUrl: "<?php echo esc_url( get_stylesheet_directory_uri() . '/dist/images/leaflet/ico-category-' ); ?>" + i + '.png',
                 iconSize:     [25, 41], 
                 iconAnchor:   [12, 41], 
                 popupAnchor:  [0, -41] 
