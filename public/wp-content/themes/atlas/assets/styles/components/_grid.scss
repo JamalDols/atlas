@@ -171,6 +171,19 @@ main {
 }
 
 //Home 
+//Hack para ocultar el header que mete el base
+body.home {
+  header.banner {
+    &:first-of-type {
+      display: none;
+    }
+  }
+  main.home {
+    header.banner {
+      display: block;
+    }
+  }
+}
 .home--info {
   .row {
     margin-bottom: 120px;

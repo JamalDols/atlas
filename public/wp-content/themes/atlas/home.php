@@ -18,7 +18,7 @@ get_template_part('templates/header');
     <div class="row">
 
       <div class="col-md-12 col-lg-3">
-        <h1 class="title--home">Què és Valencia Sostenible?</h1>
+      <h1 class="title--home"><?= the_field('title_1')?></h1>
       </div>
       <div class="col-md-12 col-lg-9">
         <span class="text__big">València Clima i Energia és una fundació municipal de l’Ajuntament de València, i que
@@ -28,7 +28,7 @@ get_template_part('templates/header');
     </div>
     <div class="row">
       <div class="col-md-12 col-lg-3">
-        <h1 class="title--home">València hui</h1>
+        <h1 class="title--home"><?= the_field('title_2')?></h1>
       </div>
       <div class="col-md-12 col-lg-9 weather-info">
         <div class="weather-info--col">
@@ -47,7 +47,7 @@ get_template_part('templates/header');
     </div>
     <div class="row">
       <div class="col-md-12 col-lg-3">
-        <h1 class="title--home">Altres mapes d’interés</h1>
+        <h1 class="title--home"><?= the_field('title_3')?></h1>
       </div>
       <div class="col-md-12 col-lg-3 card--poi">
         <a class="permalink" href="#"></a>
@@ -56,7 +56,13 @@ get_template_part('templates/header');
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-1.svg);">
               
             </div>
-            <span class="text">Fonts Públiques</span>
+            <span class="text">
+            <?php if(ICL_LANGUAGE_CODE=='ca'): ?>
+              Fonts Públiques
+            <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
+              Fuentes públicas
+            <?php endif;?>  
+            </span>
           </div>
         </div>
       </div>
@@ -78,7 +84,13 @@ get_template_part('templates/header');
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-3.svg);">
               
             </div>
-            <span class="text">Arbres Monumentals</span>
+            <span class="text">
+            <?php if(ICL_LANGUAGE_CODE=='ca'): ?>
+              Arbres Monumentals
+            <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
+              Árboles monumentales
+            <?php endif;?>  
+            </span>
           </div>
         </div>
       </div>
@@ -88,16 +100,27 @@ get_template_part('templates/header');
 
     <div class="row">
       <div class="col-md-12 col-lg-3">
-        <h1 class="title--home">Notícies</h1>
+        <h1 class="title--home"><?= the_field('title_4')?></h1>
       </div>
 
 
       <?php
-      
-
-      include_once("lib/getfeed.php");
-      output_rss_feed('http://canviclimatic.org/feed', 3, true, true, 200);
+        include_once("lib/getfeed.php");
       ?>
+      
+      
+      
+        <?php 
+        if (ICL_LANGUAGE_CODE=='ca') {
+
+              output_rss_feed('http://canviclimatic.org/feed', 3, true, true, 200);
+
+        } 
+        elseif (ICL_LANGUAGE_CODE=='es') {
+
+              output_rss_feed('http://canviclimatic.org/es/feed', 3, true, true, 200);
+        }
+        ?> 
 
     
     </div>

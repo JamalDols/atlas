@@ -88,8 +88,14 @@ zoomOffset: -1,
             
             this["category"+i] = L.geoJson(geojsonData, {
                 onEachFeature:function(feature, layer) {
-                let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
-                 layer.bindPopup(content);
+                    <?php if(ICL_LANGUAGE_CODE=='ca'): ?>
+                        let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Més informació' + '</a>';
+                        layer.bindPopup(content);    
+                    <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
+                        let content = '<span class="title">' + feature.properties.title + '</span>' +  '<span class="address">' + feature.properties.address + '</span>' +  '<a href="'+ feature.properties.url + '">' + 'Más información' + '</a>';
+                        layer.bindPopup(content);    
+                    <?php endif;?>  
+                
                 
                 },
                 pointToLayer:function(geoObj, latLng) {
@@ -106,7 +112,10 @@ zoomOffset: -1,
 
         }
 
-        var all = L.layerGroup([category1,category2,category3,category4,category5,category6,category7]);
+
+
+        <?php if(ICL_LANGUAGE_CODE=='ca'): ?>
+            var all = L.layerGroup([category1,category2,category3,category4,category5,category6,category7]);
         L.control.layers({
             "Tots":markers,
             "Refugis climàtics": category1,
@@ -118,6 +127,23 @@ zoomOffset: -1,
             "Elements d'adaptació al canvi climàtic i l'efecte illa de calor": category7,
             
         }).addTo(map);
+        <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
+            var all = L.layerGroup([category1,category2,category3,category4,category5,category6,category7]);
+        L.control.layers({
+            "Todos":markers,
+            "Refugios climáticos": category1,
+            "Equipamientos públicos de educación e información ambiental": category2,
+            "Escuelas adheridas al EAR, al 50/50 o con programas de sostenibilidad": category3,
+            "Elementos públicos de genereación de energia": category4,
+            "Comunidades energéticas": category5,
+            "Museos con temática ambiental": category6,
+            "Elementos de adaptación al cambio climático y el efecto isla de calor": category7,
+            
+        }).addTo(map);
+        <?php endif;?>  
+
+
+
         markers.addLayer(all);
         markers.addTo(map);
 
