@@ -23,6 +23,26 @@
           $('#loader').removeClass("visible");
         },1000);
 
+        $('.wpml-ls ul li span , .wpml-ls ul li a span').each(function() {
+          var text = $(this).text();
+          $(this).text(text.replace('Valencià', 'Val')); 
+        });
+
+        $('.wpml-ls ul li span , .wpml-ls ul li a span').each(function() {
+          var text = $(this).text();
+          $(this).text(text.replace('Castellà', 'Cas')); 
+        });
+
+        $('.wpml-ls ul li span , .wpml-ls ul li a span').each(function() {
+          var text = $(this).text();
+          $(this).text(text.replace('Valenciano', 'Val')); 
+        });
+
+        $('.wpml-ls ul li span , .wpml-ls ul li a span').each(function() {
+          var text = $(this).text();
+          $(this).text(text.replace('Castellano', 'Cas')); 
+        });
+
         //Mouse behaviour
           var $circle = $('.circle'),
           $follow = $('.circle-follow');
