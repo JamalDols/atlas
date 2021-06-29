@@ -173,7 +173,8 @@
         const swiper = new Swiper('.swiper-container', {
           // Optional parameters
           direction: 'horizontal',
-          loop: true,
+          loop: false,
+          watchOverflow:true,
         
           // If we need pagination
           pagination: {
@@ -187,12 +188,6 @@
           },
         
         });
-        if($(".swiper-pagination-bullet").length == 1) {
-          $('.swiper-wrapper').addClass( "disabled" );
-          $('.swiper-pagination').addClass( "disabled" );
-          $('.swiper-button-prev').addClass( "disabled" );
-          $('.swiper-button-next').addClass( "disabled" );
-      }
       }
     } 
   };
