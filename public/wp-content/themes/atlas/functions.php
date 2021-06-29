@@ -26,3 +26,33 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+
+
+// Add ACF to post list
+function change_columns( $cols ) {
+  $cols = array(
+  'cb'         => '<input type="checkbox" />',
+  'title'      => 'Title',
+  'catmap'     => 'Categoría',
+  'date'       => 'Fecha'
+  );
+  return $cols;
+}
+function custom_columns( $column ) {
+global $post;
+	if( $column == 'catmap' ) {
+	    $catmap = get_field('category');      
+      $value = $catmap['label'];
+      $label = $catmap['choices'][ $value ];
+
+
+	    if( $catmap ) {
+	        echo $value;
+		} else {
+			echo '-';
+		}
+	}
+}
+add_action( "manage_lugar_posts_custom_column", "custom_columns", 10, 2 );
+add_filter( "manage_lugar_posts_columns", "change_columns" );
