@@ -6,6 +6,8 @@ header.banner {
   position: relative;
   z-index: 10;
   pointer-events: none;
+  // opacity: 0;
+  // transition: opacity ease-in-out 500ms;
   .container-fluid {
     padding-right: 15px;
     padding-left: 15px;
@@ -54,5 +56,9 @@ header.banner {
       
     }
   }
+}
+
+nav {
+  display: flex;
 }
 

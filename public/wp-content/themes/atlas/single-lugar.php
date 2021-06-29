@@ -59,8 +59,8 @@ if( $images ): ?>
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <?php foreach( $images as $image ): ?>
-            <div class="swiper-slide" style="background-image: url(<?php echo esc_url($image['sizes']['large']); ?>);    background-size: cover; background-position: center;">
-
+            <div class="swiper-slide" style="">
+              <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="">
             </div>
             <?php endforeach; ?>
           </div>

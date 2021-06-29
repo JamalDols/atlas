@@ -621,27 +621,84 @@ main.page-template-template-suggeriments {
 
 
 .marker-cluster-small {
-  background-color: rgba(11,111,255,.6) !important;
+  background-color: rgb(241, 211, 87) !important;
   & > div {
-    background-color: rgba(11,111,255,1) !important;
+    
+    background-color: rgb(240, 194, 12) !important;
     & > span {
-      color: white;
+      color: #212529;
     }
   }
+}
+
+span.cat-list {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 3px;
+    margin: 0 6px 0 0;
+    border-radius: 100px;
+    right: -4px;
+    &.category1 {
+      background-color: #237cc9;
+    }
+    &.category2 {
+      background-color: #25ad20;
+    }
+    &.category3 {
+      background-color: #7b7b7b;
+    }
+    &.category4 {
+      background-color: #cb862d;
+    }
+    &.category5 {
+      background-color: #cb2c3e;
+    }
+    &.category6 {
+      background-color: #9c2bcb;
+    }
+    &.category7 {
+      background-color: #cbc526;
+    }
 }
 
 
 .wpml-ls {
   pointer-events: all;
-  width: auto;
-  border-radius: 5px;
-  top: 96px;
-  right: 4px;
-  position: absolute;
-  z-index: 1;
   padding: 0;
-  font-size: 14px;
-  a {
+  font-size: 16px;
+  position: relative;
+  top: -3px;
+  ul {
+    margin-left: 20px !important;
+    display: inline-block;
+    li {
+      &:first-child {
+        &:after {
+          content: '/';
+          display: inline-block;
+          margin: 0 5px 0 3px;
+        }
+      }
+      &.wpml-ls-current-language {
+        a,
+        a span {
+          pointer-events: none;
+          cursor: initial;
+        }
+      }
+    }
+  }
+  a, span {
     color: black;
+    display: inline-block;
+    padding: 0;
+  }
+  a  span{
+    pointer-events: all;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

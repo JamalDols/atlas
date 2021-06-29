@@ -9,7 +9,8 @@
         wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
       endif;
       ?>
+      <?php do_action('wpml_add_language_selector'); ?>
     </nav>
   </div>
-  <?php do_action('wpml_add_language_selector'); ?>
+  
 </header>
