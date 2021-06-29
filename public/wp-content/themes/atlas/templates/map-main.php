@@ -1,5 +1,5 @@
  <?php
-          $arg = array( 'post_type' => 'lugar', 'posts_per_page' => 10,);
+          $arg = array( 'post_type' => 'lugar', 'posts_per_page' => 1000,);
           $loop = new WP_Query( $arg );
           $posts = $loop ->get_posts();
           foreach( $posts as $post ) { 
@@ -118,26 +118,26 @@ zoomOffset: -1,
             var all = L.layerGroup([category1,category2,category3,category4,category5,category6,category7]);
         L.control.layers({
             "Tots":markers,
-            "Refugis climàtics": category1,
-            "Equipaments públics d'educació i informació ambiental": category2,
-            "Escoles adherides a l'EAR, al 50/50 o amb programes de sostenibilitat": category3,
-            "Elements públics de generació d'energia": category4,
-            "Comunitats energètiques": category5,
-            "Museus amb temàtica ambiental": category6,
-            "Elements d'adaptació al canvi climàtic i l'efecte illa de calor": category7,
+            "<span class='cat-list category1'></span>Refugis climàtics": category1,
+            "<span class='cat-list category2'></span>Equipaments públics d'educació i informació ambiental": category2,
+            "<span class='cat-list category3'></span>Escoles adherides a l'EAR, al 50/50 o amb programes de sostenibilitat": category3,
+            "<span class='cat-list category4'></span>Elements públics de generació d'energia": category4,
+            "<span class='cat-list category5'></span>Comunitats energètiques": category5,
+            "<span class='cat-list category6'></span>Museus amb temàtica ambiental": category6,
+            "<span class='cat-list category7'></span>Elements d'adaptació al canvi climàtic i l'efecte illa de calor": category7,
             
         }).addTo(map);
         <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
             var all = L.layerGroup([category1,category2,category3,category4,category5,category6,category7]);
         L.control.layers({
             "Todos":markers,
-            "Refugios climáticos": category1,
-            "Equipamientos públicos de educación e información ambiental": category2,
-            "Escuelas adheridas al EAR, al 50/50 o con programas de sostenibilidad": category3,
-            "Elementos públicos de genereación de energia": category4,
-            "Comunidades energéticas": category5,
-            "Museos con temática ambiental": category6,
-            "Elementos de adaptación al cambio climático y el efecto isla de calor": category7,
+            "<span class='cat-list category1'></span>Refugios climáticos": category1,
+            "<span class='cat-list category2'></span>Equipamientos públicos de educación e información ambiental": category2,
+            "<span class='cat-list category3'></span>Escuelas adheridas al EAR, al 50/50 o con programas de sostenibilidad": category3,
+            "<span class='cat-list category4'></span>Elementos públicos de genereación de energia": category4,
+            "<span class='cat-list category5'></span>Comunidades energéticas": category5,
+            "<span class='cat-list category6'></span>Museos con temática ambiental": category6,
+            "<span class='cat-list category7'></span>Elementos de adaptación al cambio climático y el efecto isla de calor": category7,
             
         }).addTo(map);
         <?php endif;?>  
