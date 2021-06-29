@@ -67,7 +67,7 @@ get_template_part('templates/header');
         </div>
       </div>
       <div class="col-md-12 col-lg-3 card--poi">
-        <a class="permalink" href="#"></a>
+        <a class="permalink" href="http://www.valenbisi.es/Todas-las-estaciones/Mapa" target="_blank"></a>
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-2.svg);">
@@ -78,7 +78,7 @@ get_template_part('templates/header');
         </div>
       </div>
       <div class="col-md-12 col-lg-3 card--poi">
-        <a class="permalink" href="#"></a>
+        <a class="permalink" href="https://geoportal.valencia.es/portal/apps/webappviewer/index.html?id=377b3e9faafb451c89f6c3daf70a2fcc&extent=-44252.6496%2C4788101.6802%2C-39604.3228%2C4790425.8436%2C102100" target="_blank"></a>
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-3.svg);">
@@ -113,12 +113,12 @@ get_template_part('templates/header');
         <?php 
         if (ICL_LANGUAGE_CODE=='ca') {
 
-              output_rss_feed('http://canviclimatic.org/feed', 3, true, true, 200);
+              output_rss_feed('https://climaienergia.com/feed', 3, true, true, 200);
 
         } 
         elseif (ICL_LANGUAGE_CODE=='es') {
 
-              output_rss_feed('http://canviclimatic.org/es/feed', 3, true, true, 200);
+              output_rss_feed('https://climaienergia.com/es/feed', 3, true, true, 200);
         }
         ?> 
 
