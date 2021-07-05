@@ -40,7 +40,14 @@ $category = get_field('category');
           <h1><?php echo $title ?></h1>
           <span class="address"><?php echo $address ?></span>
           <span class="description"><?php echo $description ?></span>
-          <span class="info"><a href="<?php echo $url ?>">Más información</a></span>
+          <span class="info"><a href="<?php echo $url ?>">
+          <?php if(ICL_LANGUAGE_CODE=='ca'): ?>
+              Més informació
+          <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
+              Más información
+          <?php endif;?>  
+          
+          </a></span>
         </section>
         <div class="venue--content">
         <?= the_content() ?>

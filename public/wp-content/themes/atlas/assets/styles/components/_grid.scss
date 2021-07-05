@@ -311,6 +311,9 @@ footer {
   }
   #map {
     height: calc(100vh - 207px);
+    @include media-breakpoint-down(sm) {
+      height: 100vh;
+    }
   }
 }
 
@@ -419,8 +422,8 @@ div.leaflet-container {
   &--header {
     margin-bottom: 60px;
     h1 {
-      font-weight: 400;
-      font-size: 60px;
+      font-size: 40px;
+      font-weight: 500;
     }
     .address {
       display: block;
@@ -431,7 +434,17 @@ div.leaflet-container {
       
       a {
         color:$black;
-        @extend %underline-animation;
+        margin: 25px 0 0 0;
+        border: 2px solid $black;
+        padding: 10px 20px;
+        display: inline-block;
+        border-radius: 100px;
+        text-decoration: none;
+        transition: 200ms ease all;
+        &:hover {
+          background: $black;
+          color: white;
+        }
       }
     }
   }
