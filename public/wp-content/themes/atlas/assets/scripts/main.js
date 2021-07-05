@@ -19,6 +19,19 @@
     'common': {
       init: function() {
 
+                //Responsive Menú
+                $menu = $('.nav-primary');
+                $menuHeight = $('#aaa').height();
+                $menuButton = $('.menu--button');
+                
+
+                $menuButton.on('click', function(e) {
+                  $menuButton.toggleClass("active--menu");
+                  $menu.toggleClass("active--menu");
+                  e.preventDefault();
+                });
+
+
         setTimeout(function() {
           $('#loader').removeClass("visible");
         },1000);
@@ -63,7 +76,7 @@
           
       },
       finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
+
       }
     },
     // Home page

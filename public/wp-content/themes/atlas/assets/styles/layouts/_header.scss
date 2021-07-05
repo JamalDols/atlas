@@ -19,6 +19,9 @@ header.banner {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    @include media-breakpoint-down(md) { 
+      align-items: flex-start;
+    }
   }
   .brand {
     width: 140px;
@@ -27,19 +30,62 @@ header.banner {
 
     }
   }
+  .menu--button {
+    position: absolute;
+    right: 10px;
+    visibility: hidden;
+    pointer-events: none;
+    cursor: pointer;
+    
+    .bar {
+      background: $black;
+      width: 35px;
+      height: 3px;
+      margin-bottom: 7px;
+      border-radius: 0;
+      transform-origin: center;
+      transition: all .2s ease;
+
+    }
+    &.active--menu .bar {
+      &:nth-of-type(1) {
+        transform: translateY(9px) rotate(-45deg);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        transform: translateY(-11px) rotate(45deg);
+      }
+    }
+    @include media-breakpoint-down(md) { 
+      visibility: visible;
+      pointer-events: all;
+      transition: 400ms all ease;
+      &.active--menu {
+        transform: translateY(90px);
+      }
+    }
+  }
+  .nav-primary {
+    @include media-breakpoint-down(md) { 
+      display: block;
+      text-align: right;
+    }
+  }
   .nav {
     pointer-events: all;
-    @include media-breakpoint-down(xs) {
-      width: 100%;
-      position: relative;
-      left: 0;
-      margin: 20px 0 0;
+    
+    @include media-breakpoint-down(md) { 
+      display: block;
+      
     }
     li {
       margin-left: 30px;
-      @include media-breakpoint-down(xs) {
-        margin: 0 30px 0 0;
+      @include media-breakpoint-down(md) { 
+        margin: 0;
       }
+      
       &.current-menu-item {
         a {
           font-weight: 700;
@@ -60,5 +106,57 @@ header.banner {
 
 nav {
   display: flex;
+  @include media-breakpoint-down(md) { 
+    height: 0;
+    overflow: hidden;
+    transition: 400ms all ease;
+    &.active--menu {
+      height: 78px;
+    }
+  }
+  
+}
+
+
+.wpml-ls {
+  pointer-events: all;
+  padding: 0;
+  font-size: 16px;
+  position: relative;
+  top: -3px;
+  ul {
+    margin-left: 20px !important;
+    display: inline-block;
+    @include media-breakpoint-down(md) { 
+      margin: 0 !important;
+    }
+    li {
+      &:first-child {
+        &:after {
+          content: '/';
+          display: inline-block;
+          margin: 0 5px 0 3px;
+        }
+      }
+      &.wpml-ls-current-language {
+        a,
+        a span {
+          pointer-events: none;
+          cursor: initial;
+        }
+      }
+    }
+  }
+  a, span {
+    color: black;
+    display: inline-block;
+    padding: 0;
+  }
+  a  span{
+    pointer-events: all;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 

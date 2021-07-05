@@ -11,6 +11,11 @@
       ?>
       <?php do_action('wpml_add_language_selector'); ?>
     </nav>
+    <div class="menu--button">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    </div>
   </div>
   
 </header>
