@@ -28,9 +28,7 @@
         <div class="venue--single__image" style="margin-bottom:30px; background-image:url(<?= the_post_thumbnail_url() ?>)">
         </div>
         <div id="mapid">
-
-        <iframe width="100%" height="100%" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/es/map/test-para-valencia-sostenible_528064?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
-        
+        <?php the_field('map') ?>
         </div>
       </div>
     </div>

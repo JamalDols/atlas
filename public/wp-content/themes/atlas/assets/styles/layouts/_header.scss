@@ -63,7 +63,7 @@ header.banner {
       pointer-events: all;
       transition: 400ms all ease;
       &.active--menu {
-        transform: translateY(90px);
+        transform: translateY(100px);
       }
     }
   }
@@ -111,7 +111,7 @@ nav {
     overflow: hidden;
     transition: 400ms all ease;
     &.active--menu {
-      height: 78px;
+      height: 100px;
     }
   }
   

@@ -54,6 +54,20 @@ $path-fonts     :  '../../dist/fonts';
   background-position: center;
 }
 
+%button-like {
+  color:$black;
+        margin: 25px 0 0 0;
+        border: 2px solid $black;
+        padding: 10px 20px;
+        display: inline-block;
+        border-radius: 100px;
+        text-decoration: none !important;
+        transition: 200ms ease all;
+        &:hover {
+          background: $black;
+          color: white;
+        }
+}
 %underline-animation  {
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);

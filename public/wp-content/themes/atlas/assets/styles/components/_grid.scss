@@ -305,12 +305,16 @@ footer {
 .page-template-template-map {
   header.banner {
     position: fixed;
-    top: 0;
+    top: -150px;
     z-index: 100000;
     width: 100%;
+    & > .container-fluid {
+      position: absolute;
+      top: 190px;
+    }
   }
   #map {
-    height: calc(100vh - 207px);
+    height: 100vh;
     @include media-breakpoint-down(sm) {
       height: 100vh;
     }
@@ -433,18 +437,7 @@ div.leaflet-container {
       display: block;
       
       a {
-        color:$black;
-        margin: 25px 0 0 0;
-        border: 2px solid $black;
-        padding: 10px 20px;
-        display: inline-block;
-        border-radius: 100px;
-        text-decoration: none;
-        transition: 200ms ease all;
-        &:hover {
-          background: $black;
-          color: white;
-        }
+        @extend %button-like;
       }
     }
   }
@@ -653,27 +646,41 @@ span.cat-list {
     margin: 0 6px 0 0;
     border-radius: 100px;
     right: -4px;
+    border: 2px solid black;
     &.category1 {
-      background-color: #237cc9;
+      background-color: #29ccc7;
     }
     &.category2 {
-      background-color: #25ad20;
+      background-color: #c15d5d;
     }
     &.category3 {
-      background-color: #7b7b7b;
+      background-color: #ff8fb7;
     }
     &.category4 {
-      background-color: #cb862d;
+      background-color: #f7ff8f;
     }
     &.category5 {
-      background-color: #cb2c3e;
+      background-color: #e2b544;
     }
     &.category6 {
-      background-color: #9c2bcb;
+      background-color: #5b5baa ;
     }
     &.category7 {
-      background-color: #cbc526;
+      background-color: #663737;
+    }
+    &.category8 {
+      background-color: #6bb272;
     }
 }
 
 
+
+
+.cptaxonomy {
+  &--list {
+    margin-bottom: 20px;
+  }
+  &--item{
+    @extend %button-like;
+  }
+}
