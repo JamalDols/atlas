@@ -32,7 +32,18 @@ tileSize: 512,
 zoomOffset: -1,
 }).addTo(map);
 
-        var markers=L.markerClusterGroup();
+var markers = L.markerClusterGroup({
+
+polygonOptions: {
+    fillColor: 'transparent',
+    color: 'transparent',
+    weight: 0,
+    opacity: 0,
+    fillOpacity: 0
+    }
+});
+
+        
         let geojsonData = createGeoJson(data);
 
         function createGeoJson(data) {
@@ -73,7 +84,7 @@ zoomOffset: -1,
 
 
 
-        for (let i = 1; i < 8; i++) {
+        for (let i = 1; i < 9; i++) {
 
             let markerIcon = L.icon({
                 
@@ -115,7 +126,7 @@ zoomOffset: -1,
 
 
         <?php if(ICL_LANGUAGE_CODE=='ca'): ?>
-            var all = L.layerGroup([category1,category2,category3,category4,category5,category6,category7]);
+            var all = L.layerGroup([category1,category2,category3,category4,category5,category6,category7, category8]);
         L.control.layers({
             "Tots":markers,
             "<span class='cat-list category1'></span>Refugis climàtics": category1,
@@ -125,6 +136,7 @@ zoomOffset: -1,
             "<span class='cat-list category5'></span>Comunitats energètiques": category5,
             "<span class='cat-list category6'></span>Museus amb temàtica ambiental": category6,
             "<span class='cat-list category7'></span>Elements d'adaptació al canvi climàtic i l'efecte illa de calor": category7,
+            "<span class='cat-list category8'></span>Parcs i jardins": category8,
             
         }).addTo(map);
         <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
@@ -134,10 +146,11 @@ zoomOffset: -1,
             "<span class='cat-list category1'></span>Refugios climáticos": category1,
             "<span class='cat-list category2'></span>Equipamientos públicos de educación e información ambiental": category2,
             "<span class='cat-list category3'></span>Escuelas adheridas al EAR, al 50/50 o con programas de sostenibilidad": category3,
-            "<span class='cat-list category4'></span>Elementos públicos de genereación de energia": category4,
+            "<span class='cat-list category4'></span>Elementos públicos de generación de energia": category4,
             "<span class='cat-list category5'></span>Comunidades energéticas": category5,
             "<span class='cat-list category6'></span>Museos con temática ambiental": category6,
             "<span class='cat-list category7'></span>Elementos de adaptación al cambio climático y el efecto isla de calor": category7,
+            "<span class='cat-list category8'></span>Parques y jardines": category8,
             
         }).addTo(map);
         <?php endif;?>  
