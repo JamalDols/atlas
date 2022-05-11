@@ -3,7 +3,7 @@
  * Template Name: Lugares
  */
 ?>
-<?php while (have_posts()) : the_post(); ?>
+
   <section class="page-header">
     <div class="container">
       <div class="row">
@@ -15,7 +15,7 @@
   </section>
   
   <?php get_template_part('templates/content', 'page'); ?>
-<?php endwhile; ?>
+
 
 
 <?php 
@@ -71,9 +71,7 @@ $queryObject = new  Wp_Query( array(
         <a class="venue--permalink" href="<?= the_permalink() ?>"></a>
         <div class="venue--image__container">
           <div class="venue--box-color"></div>
-            <div class="venue--image"
-            style="background-image: url(<?= the_post_thumbnail_url() ?>);"
-            ></div>
+            <div class="venue--image" style="background-image: url(<?= the_post_thumbnail_url() ?>);"></div>
         </div>
         <h1 class="venue--title"><?php the_title() ?></h1>
         <div class="venue--location">  <?php the_field('zone') ?> </div>
