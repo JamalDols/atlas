@@ -67,7 +67,7 @@ get_template_part('templates/header');
         </div>
       </div>
       <div class="col-md-12 col-lg-3 card--poi">
-        <a class="permalink" href="http://www.valenbisi.es/Todas-las-estaciones/Mapa" target="_blank"></a>
+        <a class="permalink" href="https://www.valenbisi.es/es/mapping" target="_blank"></a>
         <div class="box-color">
           <div class="item--poi">
             <div class="image" style="background-image: url(<?= get_template_directory_uri(); ?>/dist/images/icon-poi-2.svg);">

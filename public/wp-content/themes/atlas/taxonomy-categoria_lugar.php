@@ -67,11 +67,24 @@ $queryObject = new  Wp_Query( array(
 
 
 
-       <div class="col-md-4 venue--item">
+   <div class="col-md-4 venue--item">
         <a class="venue--permalink" href="<?= the_permalink() ?>"></a>
         <div class="venue--image__container">
           <div class="venue--box-color"></div>
-            <div class="venue--image" style="background-image: url(<?= the_post_thumbnail_url() ?>);"></div>
+          <?php 
+
+$images = get_field('gallery');
+
+if( $images ): ?>
+    <ul class="imagegallery">
+        <?php foreach( $images as $image ): ?>
+           
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+            <div class="venue--image"
+            style="background-image: url(<?php echo $image['sizes']['large']; ?>);"
+            ></div>
         </div>
         <h1 class="venue--title"><?php the_title() ?></h1>
         <div class="venue--location">  <?php the_field('zone') ?> </div>
