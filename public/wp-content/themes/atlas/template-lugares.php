@@ -19,6 +19,7 @@ $terms = get_terms(
 );
 
 ?>
+
 <section class="cptaxonomy--list">
 <div class="container">
   <div class="row">
@@ -45,7 +46,7 @@ $terms = get_terms(
     <div class="row">
       <?php
 $queryObject = new  Wp_Query( array(
-    'showposts' => 10,
+    'showposts' => -1,
     'post_type' => array('lugar'),
     'meta_key'			=> 'category',
     'orderby'			=> 'meta_value',

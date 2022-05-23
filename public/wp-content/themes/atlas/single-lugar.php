@@ -40,14 +40,16 @@ $category = get_field('category');
           <h1><?php echo $title ?></h1>
           <span class="address"><?php echo $address ?></span>
           <span class="description"><?php echo $description ?></span>
-          <span class="info"><a href="<?php echo $url ?>">
-          <?php if(ICL_LANGUAGE_CODE=='ca'): ?>
-              Més informació
-          <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
-              Más información
+          <?php if($url): ?>
+            <span class="info"><a href="<?php echo $url ?>">
+            <?php if(ICL_LANGUAGE_CODE=='ca'): ?>
+                Més informació
+            <?php elseif(ICL_LANGUAGE_CODE=='es'): ?>
+                Más información
+            <?php endif;?>  
+            
+            </a></span>
           <?php endif;?>  
-          
-          </a></span>
         </section>
         <div class="venue--content">
         <?= the_content() ?>
@@ -58,12 +60,13 @@ $category = get_field('category');
 
 
 
-
           <?php 
 
 $images = get_field('gallery');
 if( $images ): ?>
-        <div class="swiper-container">
+
+
+        <div class="swiper-container" style="overflow: hidden;">
           <div class="swiper-wrapper">
             <?php foreach( $images as $image ): ?>
             <div class="swiper-slide" style="">
@@ -81,15 +84,7 @@ if( $images ): ?>
 
         </script>
 
-<?php else : 
-  
-  the_post_thumbnail();
-  ?>
-
-         
-  
-       
-
+<?php else : ?>
 
 <?php endif ?>
 

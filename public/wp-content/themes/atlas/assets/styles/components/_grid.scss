@@ -371,7 +371,10 @@ footer {
 //Component Map 
 #map-main,
 #map {
-  height: 500px;
+  min-height: 500px;
+  @media (min-width:1920px) {
+    height: 50vh;
+  }
 }
 .leaflet-control-attribution.leaflet-control {
   display: none !important;
